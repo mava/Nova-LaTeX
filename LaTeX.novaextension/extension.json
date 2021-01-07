@@ -1,0 +1,66 @@
+{
+    "identifier": "info.varisco.LaTeX",
+    "name": "LaTeX",
+    "organization": "Marco Varisco",
+    "description": "Adds support for LaTeX.",
+    "version": "0.1",
+    "categories": [
+        "languages",
+        "commands",
+        "issues",
+        "tasks"
+    ],
+    "homepage": "https://github.com/mava/nova-latex",
+    "bugs": "https://github.com/mava/nova-latex/issues",
+    "license": "MIT",
+
+    "main": "main.js",
+
+    "entitlements": {
+        "process": true,
+        "filesystem": "readonly"
+    },
+
+    "activationEvents": [
+        "onLanguage:latex",
+        "onWorkspaceContains:.tex"
+    ],
+
+    "commands": {
+        "editor": [
+          {
+            "title": "Build PDF",
+            "command": "latex.build",
+            "shortcut": "ctrl-alt-b",
+            "when": "editorHasFocus && (editorSyntax == 'latex')"
+          },
+          {
+            "title": "Open PDF in Skim",
+            "command": "latex.forwardSearch",
+            "shortcut": "ctrl-alt-v",
+            "when": "editorHasFocus && (editorSyntax == 'latex') && documentHasPath"
+          },
+          {
+            "title": "Delete Generated Files",
+            "command": "latex.clean",
+            "shortcut": "ctrl-alt-c",
+            "when": "editorHasFocus && (editorSyntax == 'latex') && documentHasPath"
+          }
+        ]
+    },
+
+    "config": [
+        {
+            "key": "novalatex.path-texlab",
+            "title": "TexLab Path",
+            "type": "path",
+            "placeholder": "/usr/local/bin/texlab"
+        },
+        {
+            "key": "novalatex.path-latexmk",
+            "title": "Latexmk Path",
+            "type": "path",
+            "placeholder": "/Library/TeX/texbin/latexmk"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+.DS_Store
+.nova/
+.ignored/
+test.aux
+test.bbl
+# test.bib
+test.blg
+test.fdb_latexmk
+test.fls
+test.log
+test.out
+test.pdf
+test.synctex*
+# test.tex
+test.toc
