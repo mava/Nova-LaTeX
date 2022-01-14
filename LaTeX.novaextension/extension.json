@@ -6,61 +6,95 @@
     "version": "0.1",
     "categories": [
         "languages",
-        "commands",
+        "tasks",
         "issues",
-        "tasks"
+        "completions"
     ],
-    "homepage": "https://github.com/mava/nova-latex",
+    "repository": "https://github.com/mava/nova-latex",
     "bugs": "https://github.com/mava/nova-latex/issues",
     "license": "MIT",
 
     "main": "main.js",
 
     "entitlements": {
-        "process": true,
-        "filesystem": "readonly"
+        "process": true
     },
 
     "activationEvents": [
         "onLanguage:latex",
-        "onWorkspaceContains:.tex"
+        "onWorkspaceContains:*.tex"
     ],
 
     "commands": {
-        "editor": [
+        "extensions": [
           {
-            "title": "Build PDF",
-            "command": "latex.build",
-            "shortcut": "ctrl-alt-b",
-            "when": "editorHasFocus && (editorSyntax == 'latex')"
-          },
-          {
-            "title": "Open PDF in Skim",
-            "command": "latex.forwardSearch",
-            "shortcut": "ctrl-alt-v",
-            "when": "editorHasFocus && (editorSyntax == 'latex') && documentHasPath"
-          },
-          {
-            "title": "Delete Generated Files",
-            "command": "latex.clean",
-            "shortcut": "ctrl-alt-c",
-            "when": "editorHasFocus && (editorSyntax == 'latex') && documentHasPath"
+            "title": "LaTeX Extension Help",
+            "command": "novalatex.help"
           }
         ]
     },
 
     "config": [
         {
-            "key": "novalatex.path-texlab",
-            "title": "TexLab Path",
+            "key": "novalatex.option-latexmk",
+            "title": "PDF Engine",
+            "type": "enum",
+            "radio": true,
+            "values": [
+                ["-pdflatex", "pdfLaTeX"],
+                ["-xelatex",  "XeLaTex"],
+                ["-lualatex", "LuaLaTeX"],
+                ["", "Leave the choice to latexmk (based on latexmkrc files, if any)"]
+            ],
+            "default": "-pdflatex",
+            "description": "Choose the default engine used to build PDF files. Each project can override this choice in its Project Settings."
+        },
+        {
+            "key": "novalatex.option-skim",
+            "title": "Skim Behavior",
+            "type": "enum",
+            "radio": true,
+            "values": [
+                ["-background", "Do not bring Skim to the foreground"],
+                ["", "Bring Skim to the foreground"]
+            ],
+            "default": "-background"
+        },
+        {
+            "key": "novalatex.path-skim",
+            "title": "Skim Path",
             "type": "path",
-            "placeholder": "/usr/local/bin/texlab"
+            "default": "/Applications/Skim.app",
+            "description": "Make sure that Skim’s PDF–TeX Sync preferences are set up correctly, as explained in the Extension Help."
         },
         {
             "key": "novalatex.path-latexmk",
             "title": "Latexmk Path",
             "type": "path",
-            "placeholder": "/Library/TeX/texbin/latexmk"
+            "default": "/Library/TeX/texbin/latexmk",
+            "description": "Latexmk is included in standard MacTeX installations (in which case its path should be /Library/TeX/texbin/latexmk)."
+        },
+        {
+            "key": "novalatex.path-server",
+            "title": "Language Server Path",
+            "type": "path",
+            "default": "/opt/homebrew/bin/texlab",
+            "description": "The recommended LaTeX language server is TexLab, available via Homebrew (in which case its path should be /opt/homebrew/bin/texlab on Apple Silicon Macs, or /usr/local/bin/texlab on Intel Macs)."
+        }
+    ],
+    "configWorkspace": [
+        {
+            "key": "novalatex.option-latexmk",
+            "title": "PDF Engine",
+            "type": "enum",
+            "radio": true,
+            "values": [
+                ["-pdflatex", "pdfLaTeX"],
+                ["-xelatex",  "XeLaTex"],
+                ["-lualatex", "LuaLaTeX"],
+                ["", "Leave the choice to latexmk (based on latexmkrc files, if any)"]
+            ],
+            "description": "If nothing is selected, then the choice in the Extension Preferences is used."
         }
     ]
 }
