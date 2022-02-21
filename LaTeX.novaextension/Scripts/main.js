@@ -107,7 +107,6 @@ class LatexTaskProvider {
         task.setAction(Task.Run, new TaskProcessAction(displayline, {
             args: [
                 '$(Config:novalatex.option-skim)',
-                '-readingbar',
                 '$LineNumber',
                 '$FileDirname/${Command:novalatex.getFilenameWithoutExt}.pdf',
                 '$File'
