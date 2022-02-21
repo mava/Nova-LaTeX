@@ -65,7 +65,7 @@
             "title": "Skim Path",
             "type": "path",
             "default": "/Applications/Skim.app",
-            "description": "Make sure that Skim’s PDF–TeX Sync preferences are set up correctly, as explained in the Extension Help."
+            "description": "Make sure that Nova is selected in Skim’s PDF–TeX Sync preferences, as explained in the Extension Help."
         },
         {
             "key": "novalatex.path-latexmk",

@@ -14,12 +14,8 @@ This extension provides basic support for [**LaTeX**](https://en.wikipedia.org/w
 - To build PDF files from LaTeX sources, [**MacTeX**](https://www.tug.org/mactex/) (or any other TeX distribution with `latexmk`) is required.
 
 - To preview PDF files with LaTeX ⇌ PDF synchronization, the PDF reader [**Skim**](https://skim-app.sourceforge.io) is required.
-To enable jumping back to the LaTeX source line in Nova corresponding to a point in a PDF in Skim, first install Nova’s **Command Line Tool**; see Nova’s **Preferences → Tools**.
-Then, in Skim’s **Preferences → Sync**, under **PDF–TeX Sync support**, enter the following:
-
-		   Preset: Custom
-		  Command: nova
-		Arguments: open "%file" -l %line
+To enable jumping back to the LaTeX source line in Nova corresponding to a point in a PDF in Skim, open Skim’s **Preferences → Sync** and then choose **Nova** from the **PDF–TeX Sync Preset** dropdown menu.
+This requires Nova&#8239;≥&#8239;8.0 & Skim&#8239;≥&#8239;1.6.9.
 
 - Smart code completion, contextual hover information, and issue reports require the [**TexLab Language Server**](https://github.com/latex-lsp/texlab). The easiest way to install TexLab is to first install [Homebrew](https://brew.sh) and then run `brew install texlab` in a terminal.
 If no language server is installed or the path provided in this extension’s **Preferences** tab is incorrect, then smart code completion, contextual hover information, and issue reports are just not available, but everything else works.
@@ -32,7 +28,7 @@ Make sure that the **Language Server** features are enabled in Nova’s **Prefer
 ## Usage
 
 To build and preview PDF files, this extension provides **Build** (⌘B) and **Run** (⌘R) tasks, available in the project toolbar, under the Project menu item, and in the command palette (⇧⌘P).
-There is a also a **Clean** (⇧⌘K) task to remove TeX auxiliary files.
+There is also a **Clean** (⇧⌘K) task to remove TeX auxiliary files.
 
 These tasks become automatically available in any project containing `.tex` files.
 The default engine used to build PDF files (pdfLaTeX or XeLaTex or LuaLaTeX) can be chosen in this extension’s **Preferences** tab, and it can also be configured on a per-project basis in **Project → Project Settings…**
@@ -41,7 +37,7 @@ The **Run** (⌘R) task opens in Skim the PDF corresponding to the LaTeX source 
 By default, Skim is kept in the background, but this can be changed in this extension’s **Preferences** tab.
 
 To jump back to the LaTeX source line corresponding to a point in a PDF file, just ⇧⌘-*click* on a point in the PDF in Skim.
-Make sure that Skim’s **PDF–TeX Sync** preferences are set up correctly, as explained above in the third bullet point under Requirements.
+Make sure that **Nova** is selected in Skim’s **PDF–TeX Sync** preferences, as explained above in the third bullet point under Requirements.
 
 The log files produced during the **Build** (⌘B) task are available in Nova’s **Reports Sidebar**.
 Compilation errors and warnings are displayed in the **Issues Sidebar** and in the editor gutter (this requires the TexLab Language Server).
@@ -64,6 +60,8 @@ These can be tracked in revision control systems, shared with collaborators, and
 
 The Build, Run, and Clean tasks are automatically available.
 Technically, they are implemented as [Task Assistants, not Task Templates](https://docs.nova.app/extensions/run-configurations/), because for most use cases “requiring a user to add an instance of a task via a Task Template may be too much overhead[.”](https://docs.nova.app/extensions/run-configurations/#defining-a-task-assistant)
+This way it’s also possible to open a single `.tex` file in Nova and just build it, with no need to first choose a project for the corresponding window.
+<!-- “You have not yet chosen a project for this window.” -->
 
 The cool stuff (smart code completion, contextual hover information, issue reports) is provided by the [TexLab Language Server](https://github.com/latex-lsp/texlab).
 Nova’s implementation of the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/) is great, and TexLab’s implementation of the LSP for LaTeX is great — why reinvent the wheel?
