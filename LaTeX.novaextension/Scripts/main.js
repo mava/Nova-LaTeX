@@ -108,7 +108,7 @@ class LatexTaskProvider {
             args: [
                 '$(Config:novalatex.option-skim)',
                 '$LineNumber',
-                '$FileDirname/${Command:novalatex.getFilenameWithoutExt}.pdf',
+                '${Command:novalatex.getFilenameWithoutExt}.pdf',
                 '$File'
             ],
         }));
@@ -121,6 +121,17 @@ nova.assistants.registerTaskAssistant(new LatexTaskProvider(), {
     identifier: 'novalatex-tasks'
 });
 
-nova.commands.register('novalatex.getFilenameWithoutExt', (workspace) => nova.path.splitext(workspace.activeTextEditor.document.path)[0]);
+nova.commands.register('novalatex.getFilenameWithoutExt', (workspace) => {
+    const editor = workspace.activeTextEditor;
+    let path = editor ? editor.document.path : undefined;
+    if (typeof path === 'string') {
+        const lastIndexOfSlash = path.lastIndexOf('/');
+        const indexOfExt = path.indexOf('.', lastIndexOfSlash);
+        if (indexOfExt > lastIndexOfSlash + 1) {
+            path = path.substring(0, indexOfExt);
+        }
+    }
+    return path;
+});
 
 nova.commands.register('novalatex.help', () => nova.extension.openReadme());
