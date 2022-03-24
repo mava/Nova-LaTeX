@@ -64,22 +64,22 @@
             "key": "novalatex.path-skim",
             "title": "Skim Path",
             "type": "path",
-            "default": "/Applications/Skim.app",
+            "placeholder": "/Applications/Skim.app",
             "description": "Make sure that Nova is selected in Skim’s PDF–TeX Sync preferences, as explained in the Extension Help."
         },
         {
             "key": "novalatex.path-latexmk",
             "title": "Latexmk Path",
             "type": "path",
-            "default": "/Library/TeX/texbin/latexmk",
-            "description": "Latexmk is included in standard MacTeX installations (in which case its path should be /Library/TeX/texbin/latexmk)."
+            "placeholder": "latexmk",
+            "description": "This needs to be configured only if latexmk is not in $PATH."
         },
         {
             "key": "novalatex.path-server",
             "title": "Language Server Path",
             "type": "path",
-            "default": "/opt/homebrew/bin/texlab",
-            "description": "The recommended LaTeX language server is TexLab, available via Homebrew (in which case its path should be /opt/homebrew/bin/texlab on Apple Silicon Macs, or /usr/local/bin/texlab on Intel Macs)."
+            "placeholder": "texlab",
+            "description": "This needs to be configured only if texlab is not in $PATH, or to use a different language server."
         }
     ],
     "configWorkspace": [

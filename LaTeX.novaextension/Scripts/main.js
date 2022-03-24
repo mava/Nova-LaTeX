@@ -34,8 +34,11 @@ class LatexLanguageServer {
         
         // Create the client
         var serverOptions = {
-            path: path || '/opt/homebrew/bin/texlab',
-            args: ['-v']
+            path: '/usr/bin/env',
+            args: [
+                path || 'texlab',
+                '-v'
+            ]
         };
         var clientOptions = {
             // The set of document syntaxes for which the server is valid
@@ -71,42 +74,33 @@ class LatexLanguageServer {
 
 class LatexTaskProvider {
     constructor() {
-        nova.config.onDidChange('novalatex.path-skim', function() {
-            nova.workspace.reloadTasks('novalatex-tasks');
-        }, this);
-        nova.config.onDidChange('novalatex.path-latexmk', function() {
-            nova.workspace.reloadTasks('novalatex-tasks');
-        }, this);        
     }
     
     provideTasks() {
-        const latexmk = nova.config.get('novalatex.path-latexmk');
-        const displayline = nova.path.join(
-            nova.config.get('novalatex.path-skim'),
-            '/Contents/SharedSupport/displayline'
-        );
-        
         let task = new Task('LaTeX → PDF');
         
-        task.setAction(Task.Build, new TaskProcessAction(latexmk, {
+        task.setAction(Task.Build, new TaskProcessAction('usr/bin/env', {
             args: [
-                '$(Config:novalatex.option-latexmk)',
+                '${Command:novalatex.getPathLatexmk}',
+                '${Config:novalatex.option-latexmk}',
                 '-interaction=nonstopmode',
                 '-synctex=1',
                 '-cd',
                 '$File'
             ],
         }));
-        task.setAction(Task.Clean, new TaskProcessAction(latexmk, {
+        task.setAction(Task.Clean, new TaskProcessAction('usr/bin/env', {
             args: [
+                '${Command:novalatex.getPathLatexmk}',
                 '-c',
                 '-cd',
                 '$File'
             ],
         }));
-        task.setAction(Task.Run, new TaskProcessAction(displayline, {
+        task.setAction(Task.Run, new TaskProcessAction('usr/bin/env', {
             args: [
-                '$(Config:novalatex.option-skim)',
+                '${Command:novalatex.getPathSkim}',
+                '${Config:novalatex.option-skim}',
                 '$LineNumber',
                 '$FileDirname/${Command:novalatex.getFilenameWithoutExt}.pdf',
                 '$File'
@@ -120,6 +114,17 @@ class LatexTaskProvider {
 nova.assistants.registerTaskAssistant(new LatexTaskProvider(), {
     identifier: 'novalatex-tasks'
 });
+
+nova.commands.register('novalatex.getPathLatexmk', () =>
+    nova.config.get('novalatex.path-latexmk') || 'latexmk'
+);
+
+nova.commands.register('novalatex.getPathSkim', () =>
+    nova.path.join(
+        nova.config.get('novalatex.path-skim') || '/Applications/Skim.app',
+        '/Contents/SharedSupport/displayline'
+    )
+);
 
 nova.commands.register('novalatex.getFilenameWithoutExt', (workspace) => nova.path.splitext(workspace.activeTextEditor.document.path)[0]);
 
