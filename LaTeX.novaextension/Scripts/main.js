@@ -79,7 +79,7 @@ class LatexTaskProvider {
     provideTasks() {
         let task = new Task('LaTeX → PDF');
         
-        task.setAction(Task.Build, new TaskProcessAction('usr/bin/env', {
+        task.setAction(Task.Build, new TaskProcessAction('/usr/bin/env', {
             args: [
                 '${Command:novalatex.getPathLatexmk}',
                 '${Config:novalatex.option-latexmk}',
@@ -89,7 +89,7 @@ class LatexTaskProvider {
                 '$File'
             ],
         }));
-        task.setAction(Task.Clean, new TaskProcessAction('usr/bin/env', {
+        task.setAction(Task.Clean, new TaskProcessAction('/usr/bin/env', {
             args: [
                 '${Command:novalatex.getPathLatexmk}',
                 '-c',
@@ -97,7 +97,7 @@ class LatexTaskProvider {
                 '$File'
             ],
         }));
-        task.setAction(Task.Run, new TaskProcessAction('usr/bin/env', {
+        task.setAction(Task.Run, new TaskProcessAction('/usr/bin/env', {
             args: [
                 '${Command:novalatex.getPathSkim}',
                 '${Config:novalatex.option-skim}',
