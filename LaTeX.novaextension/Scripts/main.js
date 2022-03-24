@@ -16,8 +16,8 @@ exports.deactivate = function() {
 
 class LatexLanguageServer {
     constructor() {
-        // Observe the configuration setting for the server's location, and restart the server on change
-        nova.config.observe('novalatex.path-server', function(path) {
+        // Observe the configuration setting for the server’s location, and restart the server on change
+        nova.config.observe("novalatex.path-server", function(path) {
             this.start(path);
         }, this);
     }
@@ -34,17 +34,17 @@ class LatexLanguageServer {
         
         // Create the client
         var serverOptions = {
-            path: '/usr/bin/env',
+            path: "/usr/bin/env",
             args: [
-                path || 'texlab',
-                '-v'
+                path || "texlab",
+                "-v"
             ]
         };
         var clientOptions = {
             // The set of document syntaxes for which the server is valid
-            syntaxes: ['latex']
+            syntaxes: ["latex"]
         };
-        var client = new LanguageClient('novalatex-server', 'LaTeX Language Server', serverOptions, clientOptions);
+        var client = new LanguageClient("novalatex-server", "LaTeX Language Server", serverOptions, clientOptions);
         
         try {
             // Start the client
@@ -55,7 +55,7 @@ class LatexLanguageServer {
             this.languageClient = client;
         }
         catch (err) {
-            // If the .start() method throws, it's likely because the path to the language server is invalid
+            // If the .start() method throws, it’s likely because the path to the language server is invalid
             if (nova.inDevMode()) {
                 console.error(err);
             }
@@ -77,33 +77,33 @@ class LatexTaskProvider {
     }
     
     provideTasks() {
-        let task = new Task('LaTeX → PDF');
+        let task = new Task("LaTeX → PDF");
         
-        task.setAction(Task.Build, new TaskProcessAction('/usr/bin/env', {
+        task.setAction(Task.Build, new TaskProcessAction("/usr/bin/env", {
             args: [
-                '${Command:novalatex.getPathLatexmk}',
-                '${Config:novalatex.option-latexmk}',
-                '-interaction=nonstopmode',
-                '-synctex=1',
-                '-cd',
-                '$File'
+                "${Command:novalatex.getPathLatexmk}",
+                "${Config:novalatex.option-latexmk}",
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "-cd",
+                "$File"
             ],
         }));
-        task.setAction(Task.Clean, new TaskProcessAction('/usr/bin/env', {
+        task.setAction(Task.Clean, new TaskProcessAction("/usr/bin/env", {
             args: [
-                '${Command:novalatex.getPathLatexmk}',
-                '-c',
-                '-cd',
-                '$File'
+                "${Command:novalatex.getPathLatexmk}",
+                "-c",
+                "-cd",
+                "$File"
             ],
         }));
-        task.setAction(Task.Run, new TaskProcessAction('/usr/bin/env', {
+        task.setAction(Task.Run, new TaskProcessAction("/usr/bin/env", {
             args: [
-                '${Command:novalatex.getPathSkim}',
-                '${Config:novalatex.option-skim}',
-                '$LineNumber',
-                '$FileDirname/${Command:novalatex.getFilenameWithoutExt}.pdf',
-                '$File'
+                "${Command:novalatex.getPathSkim}",
+                "${Config:novalatex.option-skim}",
+                "$LineNumber",
+                "$FileDirname/${Command:novalatex.getFilenameWithoutExt}.pdf",
+                "$File"
             ],
         }));
         
@@ -112,20 +112,20 @@ class LatexTaskProvider {
 }
 
 nova.assistants.registerTaskAssistant(new LatexTaskProvider(), {
-    identifier: 'novalatex-tasks'
+    identifier: "novalatex-tasks"
 });
 
-nova.commands.register('novalatex.getPathLatexmk', () =>
-    nova.config.get('novalatex.path-latexmk') || 'latexmk'
+nova.commands.register("novalatex.getPathLatexmk", () =>
+    nova.config.get("novalatex.path-latexmk") || "latexmk"
 );
 
-nova.commands.register('novalatex.getPathSkim', () =>
+nova.commands.register("novalatex.getPathSkim", () =>
     nova.path.join(
-        nova.config.get('novalatex.path-skim') || '/Applications/Skim.app',
-        '/Contents/SharedSupport/displayline'
+        nova.config.get("novalatex.path-skim") || "/Applications/Skim.app",
+        "/Contents/SharedSupport/displayline"
     )
 );
 
-nova.commands.register('novalatex.getFilenameWithoutExt', (workspace) => nova.path.splitext(workspace.activeTextEditor.document.path)[0]);
+nova.commands.register("novalatex.getFilenameWithoutExt", (workspace) => nova.path.splitext(workspace.activeTextEditor.document.path)[0]);
 
-nova.commands.register('novalatex.help', () => nova.extension.openReadme());
+nova.commands.register("novalatex.help", () => nova.extension.openReadme());
