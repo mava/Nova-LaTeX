@@ -81,7 +81,7 @@ class LatexTaskProvider {
         
         task.setAction(Task.Build, new TaskProcessAction("/usr/bin/env", {
             args: [
-                "${Command:novalatex.getPathLatexmk}",
+                "${Config:novalatex.path-latexmk}",
                 "${Config:novalatex.option-latexmk}",
                 "-interaction=nonstopmode",
                 "-synctex=1",
@@ -91,15 +91,15 @@ class LatexTaskProvider {
         }));
         task.setAction(Task.Clean, new TaskProcessAction("/usr/bin/env", {
             args: [
-                "${Command:novalatex.getPathLatexmk}",
+                "${Config:novalatex.path-latexmk}",
                 "-c",
                 "-cd",
                 "$File"
             ],
         }));
-        task.setAction(Task.Run, new TaskProcessAction("/usr/bin/env", {
+        task.setAction(Task.Run, new TaskProcessAction("/usr/bin/command", {
             args: [
-                "${Command:novalatex.getPathSkim}",
+                "${Config:novalatex.path-skim}/Contents/SharedSupport/displayline",
                 "${Config:novalatex.option-skim}",
                 "$LineNumber",
                 "$FileDirname/${Command:novalatex.getFilenameWithoutExt}.pdf",
@@ -114,17 +114,6 @@ class LatexTaskProvider {
 nova.assistants.registerTaskAssistant(new LatexTaskProvider(), {
     identifier: "novalatex-tasks"
 });
-
-nova.commands.register("novalatex.getPathLatexmk", () =>
-    nova.config.get("novalatex.path-latexmk") || "latexmk"
-);
-
-nova.commands.register("novalatex.getPathSkim", () =>
-    nova.path.join(
-        nova.config.get("novalatex.path-skim") || "/Applications/Skim.app",
-        "/Contents/SharedSupport/displayline"
-    )
-);
 
 nova.commands.register("novalatex.getFilenameWithoutExt", (workspace) => nova.path.splitext(workspace.activeTextEditor.document.path)[0]);
 
