@@ -71,15 +71,15 @@
             "key": "novalatex.path-latexmk",
             "title": "Latexmk Path",
             "type": "path",
-            "default": "/Library/TeX/texbin/latexmk",
-            "description": "Latexmk is included in standard MacTeX installations (in which case its path should be /Library/TeX/texbin/latexmk)."
+            "default": "latexmk",
+            "description": "This needs to be configured only if latexmk is not in $PATH."
         },
         {
             "key": "novalatex.path-server",
             "title": "Language Server Path",
             "type": "path",
-            "default": "/opt/homebrew/bin/texlab",
-            "description": "The recommended LaTeX language server is TexLab, available via Homebrew (in which case its path should be /opt/homebrew/bin/texlab on Apple Silicon Macs, or /usr/local/bin/texlab on Intel Macs)."
+            "default": "texlab",
+            "description": "This needs to be configured only if texlab is not in $PATH, or to use a different language server."
         }
     ],
     "configWorkspace": [
@@ -89,12 +89,19 @@
             "type": "enum",
             "radio": true,
             "values": [
+                [null, "Use what’s selected in Extension Preferences"],
                 ["-pdflatex", "pdfLaTeX"],
                 ["-xelatex",  "XeLaTex"],
                 ["-lualatex", "LuaLaTeX"],
                 ["", "Leave the choice to latexmk (based on latexmkrc files, if any)"]
             ],
-            "description": "If nothing is selected, then the choice in the Extension Preferences is used."
+            "default": null
+        },
+        {
+            "key": "novalatex.mainfile",
+            "title": "Main .tex File",
+            "type": "path",
+            "description": "If nothing is chosen, then the tasks use whichever file is active."
         }
     ]
 }
