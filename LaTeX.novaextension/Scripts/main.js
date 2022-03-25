@@ -87,7 +87,7 @@ class LatexTaskProvider {
                 "-synctex=1",
                 "-cd",
                 "${Command:novalatex.getMainFile}"
-            ],
+            ]
         }));
         task.setAction(Task.Clean, new TaskProcessAction("/usr/bin/env", {
             args: [
@@ -95,7 +95,7 @@ class LatexTaskProvider {
                 "-c",
                 "-cd",
                 "${Command:novalatex.getMainFile}"
-            ],
+            ]
         }));
         task.setAction(Task.Run, new TaskProcessAction("/usr/bin/command", {
             args: [
@@ -104,7 +104,7 @@ class LatexTaskProvider {
                 "$LineNumber",
                 "${Command:novalatex.getMainFilePdf}",
                 "$File"
-            ],
+            ]
         }));
         
         return [task];
