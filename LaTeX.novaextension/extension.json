@@ -89,12 +89,19 @@
             "type": "enum",
             "radio": true,
             "values": [
+                [null, "Use what’s selected in Extension Preferences"],
                 ["-pdflatex", "pdfLaTeX"],
                 ["-xelatex",  "XeLaTex"],
                 ["-lualatex", "LuaLaTeX"],
                 ["", "Leave the choice to latexmk (based on latexmkrc files, if any)"]
             ],
-            "description": "If nothing is selected, then the choice in the Extension Preferences is used."
+            "default": null
+        },
+        {
+            "key": "novalatex.mainfile",
+            "title": "Main .tex File",
+            "type": "path",
+            "description": "If nothing is chosen, then the tasks use whichever file is active."
         }
     ]
 }

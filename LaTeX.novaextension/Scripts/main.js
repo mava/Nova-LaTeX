@@ -86,7 +86,7 @@ class LatexTaskProvider {
                 "-interaction=nonstopmode",
                 "-synctex=1",
                 "-cd",
-                "$File"
+                "${Command:novalatex.getMainFile}"
             ],
         }));
         task.setAction(Task.Clean, new TaskProcessAction("/usr/bin/env", {
@@ -94,7 +94,7 @@ class LatexTaskProvider {
                 "${Config:novalatex.path-latexmk}",
                 "-c",
                 "-cd",
-                "$File"
+                "${Command:novalatex.getMainFile}"
             ],
         }));
         task.setAction(Task.Run, new TaskProcessAction("/usr/bin/command", {
@@ -102,7 +102,7 @@ class LatexTaskProvider {
                 "${Config:novalatex.path-skim}/Contents/SharedSupport/displayline",
                 "${Config:novalatex.option-skim}",
                 "$LineNumber",
-                "$FileDirname/${Command:novalatex.getFilenameWithoutExt}.pdf",
+                "${Command:novalatex.getMainFilePdf}",
                 "$File"
             ],
         }));
@@ -115,6 +115,14 @@ nova.assistants.registerTaskAssistant(new LatexTaskProvider(), {
     identifier: "novalatex-tasks"
 });
 
-nova.commands.register("novalatex.getFilenameWithoutExt", (workspace) => nova.path.splitext(workspace.activeTextEditor.document.path)[0]);
+nova.commands.register("novalatex.getMainFile", (workspace) =>
+    workspace.config.get("novalatex.mainfile") || workspace.activeTextEditor?.document.path
+);
+
+nova.commands.register("novalatex.getMainFilePdf", (workspace) => {
+    let mainfile = workspace.config.get("novalatex.mainfile") || workspace.activeTextEditor?.document.path || "";
+    return nova.path.join(nova.path.dirname(mainfile), nova.path.splitext(mainfile)[0]) + ".pdf";
+ });
+
 
 nova.commands.register("novalatex.help", () => nova.extension.openReadme());

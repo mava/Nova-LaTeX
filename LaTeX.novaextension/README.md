@@ -31,7 +31,8 @@ To build and preview PDF files, this extension provides **Build** (⌘B) and **R
 There is also a **Clean** (⇧⌘K) task to remove TeX auxiliary files.
 
 These tasks become automatically available in any project containing `.tex` files.
-The default engine used to build PDF files (pdfLaTeX or XeLaTex or LuaLaTeX) can be chosen in this extension’s **Preferences** tab, and it can also be configured on a per-project basis in **Project → Project Settings…**
+The default engine used to build PDF files (pdfLaTeX or XeLaTex or LuaLaTeX) can be chosen in this extension’s **Preferences** tab, and it can also be configured on a per-project basis in **Project → Project Settings**.
+By default the tasks use whichever file is active, but there is also an option to select a main (root) `.tex` file in the **Project Settings**.
 
 The **Run** (⌘R) task opens in Skim the PDF corresponding to the LaTeX source in Nova’s active editor, and highlights the line under the cursor’s position in Nova.
 By default, Skim is kept in the background, but this can be changed in this extension’s **Preferences** tab.
@@ -51,8 +52,8 @@ This extension is very elementary.
 As the name suggests, it only supports LaTeX (no ConTeXt, no plain TeX, …).
 It uses [`latexmk`](https://www.personal.psu.edu/~jcc8/software/latexmk/) for its **Build** and **Clean** tasks:
 
-- **Build** calls `latexmk 🔨 -interaction=nonstopmode -synctex=1 -cd` on the active file, where `🔨` is either `-pdflatex` or `-xelatex` or `-lualatex` or empty, according to the choice in **Preferences**.
-- **Clean** simply calls `latexmk -c -cd` on the active file.
+- **Build** calls `latexmk 🔨 -interaction=nonstopmode -synctex=1 -cd 📜`, where `🔨` is either `-pdflatex` or `-xelatex` or `-lualatex` or empty, according to the choice in **Preferences**, and `📜` is the active file or the one chosen in **Project Settings.**
+- **Clean** simply calls `latexmk -c -cd 📜`.
 
 This should cover most use cases.
 Instead of providing an interface to some of `latexmk`’s many, many configuration options in the extension Preferences, I recommend using `latexmkrc` files.
