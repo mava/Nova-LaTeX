@@ -9,7 +9,7 @@ This extension provides basic support for [**LaTeX**](https://en.wikipedia.org/w
 
 ## Requirements
 
-- Syntax highlighting, document outlining, and code folding work out of the box.
+- Syntax highlighting, document outlining, and code folding work out of the box, for LaTeX (`.tex`) and BibTeX (`.bib`) files.
 
 - To build PDF files from LaTeX sources, [**MacTeX**](https://www.tug.org/mactex/) (or any other TeX distribution with `latexmk`) is required.
 
@@ -32,7 +32,7 @@ There is also a **Clean** (⇧⌘K) task to remove TeX auxiliary files.
 
 These tasks become automatically available in any project containing `.tex` files.
 The default engine used to build PDF files (pdfLaTeX or XeLaTex or LuaLaTeX) can be chosen in this extension’s **Preferences** tab, and it can also be configured on a per-project basis in **Project → Project Settings**.
-By default the tasks use whichever file is active, but there is also an option to select a main (root) `.tex` file in the **Project Settings**.
+By default the tasks use whichever file is active, but there is also an option to choose a main (root) `.tex` file in the **Project Settings**.
 
 The **Run** (⌘R) task opens in Skim the PDF corresponding to the LaTeX source in Nova’s active editor, and highlights the line under the cursor’s position in Nova.
 By default, Skim is kept in the background, but this can be changed in this extension’s **Preferences** tab.
@@ -44,7 +44,7 @@ The log files produced during the **Build** (⌘B) task are available in Nova’
 Compilation errors and warnings are displayed in the **Issues Sidebar** and in the editor gutter (this requires the TexLab Language Server).
 Finally, the **Symbols Sidebar** shows an outline of the LaTeX document structure.
 
-* * *
+***
 
 ## Technical Implementation Details
 
@@ -65,7 +65,7 @@ This way it’s also possible to open a single `.tex` file in Nova and just buil
 <!-- “You have not yet chosen a project for this window.” -->
 
 The cool stuff (smart code completion, contextual hover information, issue reports) is provided by the [TexLab Language Server](https://github.com/latex-lsp/texlab).
-Nova’s implementation of the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/) is great, and TexLab’s implementation of the LSP for LaTeX is great — why reinvent the wheel?
+Nova’s implementation of the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/) is great, and TexLab’s implementation of the LSP for LaTeX is great&#8239;—&#8239;why reinvent the wheel?
 In fact, this extension uses nothing more than Nova’s Language Server Extension template (and so it can be run with other language servers; for example, [Digestif](https://github.com/astoff/digestif)).
 
 Syntax highlighting and symbolication are also rudimentary, but seem to get the job done fast.
