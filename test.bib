@@ -26,3 +26,960 @@ MRREVIEWER = {Nicholas M. Katz},
 MRREVIEWER = {Spencer J. Bloch},
        URL = {http://www.numdam.org/item?id=PMIHES_1980__52__137_0},
 }
+
+
+
+
+@comment{Some more examples…}
+
+
+From Lamport’s LaTeX book (Appendix B) and Patashnik’s BibTeXing
+
+@BOOK{kn:gnus,
+    AUTHOR = "Donald E. Knudson",
+    TITLE  = "1966 World Gnus Almanac",
+    PUBLISHER = {Permafrost Press},
+    ADDRESS = {Novosibirsk} }
+
+@Book(KN-Gnus, author={Donald E. Knudson} ,
+               TiTlE  =     "1966 World
+                             Gnus Almanac", Volume = 27 )
+
+@string{jgg1 = "Journal of Gnats and Gnus, Series~1"}
+
+@INPROCEEDINGS(beestly-gnats,
+  AUTHOR   = "Will D. Beest",
+  TITLE    = "Gnats in the Gnus",
+  PAGES    = "47--59",
+  CROSSREF = "ope:6cpb")
+...
+@PROCEEDINGS(ope:6cpb,
+  TITLE     = "Sixth Conference on Parasites in Bovidae",
+  BOOKTITLE = "Sixth Conference on Parasites in Bovidae",
+  EDITOR    = "Ann T. L. Ope",
+  YEAR      = 1975)
+
+
+@STRING( WGA = " World Gnus Almanac" )
+
+@BOOK(almanac-67,
+  title = 1967 # WGA,
+  month = "1~" # jan,
+)
+
+@INPROCEEDINGS(no-gnats,
+  crossref = "gg-proceedings",
+  author = "Rocky Gneisser",
+  title = "No Gnats Are Taken for Granite",
+  pages = "133-139")
+...
+@PROCEEDINGS(gg-proceedings,
+  editor = "Gerald Ford and Jimmy Carter",
+  title = "The Gnats and Gnus 1988 Proceedings",
+  booktitle = "The Gnats and Gnus 1988 Proceedings")
+
+@PREAMBLE{ "\newcommand{\noopsort}[1]{} "
+         # "\newcommand{\singleletter}[1]{#1} " }
+
+
+
+
+From https://www.learnlatex.org/en/lesson-12
+
+@article{Thomas2008,
+  author  = {Thomas, Christine M. and Liu, Tianbiao and Hall, Michael B.
+             and Darensbourg, Marcetta Y.},
+  title   = {Series of Mixed Valent {Fe(II)Fe(I)} Complexes That Model the
+             {H(OX)} State of [{FeFe}]Hydrogenase: Redox Properties,
+             Density-Functional Theory Investigation, and Reactivity with
+             Extrinsic {CO}},
+  journal = {Inorg. Chem.},
+  year    = {2008},
+  volume  = {47},
+  number  = {15},
+  pages   = {7009-7024},
+  doi     = {10.1021/ic800654a},
+}
+@book{Graham1995,
+  author    = {Ronald L. Graham and Donald E. Knuth and Oren Patashnik},
+  title     = {Concrete Mathematics},
+  publisher = {Addison-Wesley},
+  year      = {1995},
+}
+
+
+
+
+From https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex
+
+@book{texbook,
+  author = {Donald E. Knuth},
+  year = {1986},
+  title = {The {\TeX} Book},
+  publisher = {Addison-Wesley Professional}
+}
+
+@book{latex:companion,
+  author = {Frank Mittelbach and Michel Gossens
+            and Johannes Braams and David Carlisle
+            and Chris Rowley},
+  year = {2004},
+  title = {The {\LaTeX} Companion},
+  publisher = {Addison-Wesley Professional},
+  edition = {2}
+}
+
+@book{latex2e,
+  author = {Leslie Lamport},
+  year = {1994},
+  title = {{\LaTeX}: a Document Preparation System},
+  publisher = {Addison Wesley},
+  address = {Massachusetts},
+  edition = {2}
+}
+
+@article{knuth:1984,
+  title={Literate Programming},
+  author={Donald E. Knuth},
+  journal={The Computer Journal},
+  volume={27},
+  number={2},
+  pages={97--111},
+  year={1984},
+  publisher={Oxford University Press}
+}
+
+@inproceedings{lesk:1977,
+  title={Computer Typesetting of Technical Journals on {UNIX}},
+  author={Michael Lesk and Brian Kernighan},
+  booktitle={Proceedings of American Federation of
+             Information Processing Societies: 1977
+             National Computer Conference},
+  pages={879--888},
+  year={1977},
+  address={Dallas, Texas}
+}
+
+
+
+
+Mirzakhani’s publications from zbMATH and MathSciNet
+
+@Article{zbMATH07173694,
+    Author = {Mirzakhani, Mariam and Petri, Bram},
+    Title = {Lengths of closed geodesics on random surfaces of large genus},
+    FJournal = {Commentarii Mathematici Helvetici},
+    Journal = {Comment. Math. Helv.},
+    ISSN = {0010-2571},
+    Volume = {94},
+    Number = {4},
+    Pages = {869--889},
+    Year = {2019},
+    Language = {English},
+    DOI = {10.4171/CMH/477},
+    Keywords = {57M50,32G15},
+    zbMATH = {7173694},
+    Zbl = {1472.57028}
+}
+
+@Article{zbMATH07023768,
+    Author = {Eskin, Alex and Mirzakhani, Maryam and Rafi, Kasra},
+    Title = {Counting closed geodesics in strata},
+    FJournal = {Inventiones Mathematicae},
+    Journal = {Invent. Math.},
+    ISSN = {0020-9910},
+    Volume = {215},
+    Number = {2},
+    Pages = {535--607},
+    Year = {2019},
+    Language = {English},
+    DOI = {10.1007/s00222-018-0832-y},
+    Keywords = {37D40,37C35,53C22,30F30},
+    zbMATH = {7023768},
+    Zbl = {1411.37033}
+}
+
+@Article{zbMATH06914160,
+    Author = {Eskin, Alex and Mirzakhani, Maryam},
+    Title = {Invariant and stationary measures for the {{\(\mathrm{SL}(2,\mathbb{R})\)}} action on moduli space},
+    FJournal = {Publications Math{\'e}matiques},
+    Journal = {Publ. Math., Inst. Hautes {\'E}tud. Sci.},
+    ISSN = {0073-8301},
+    Volume = {127},
+    Pages = {95--324},
+    Year = {2018},
+    Language = {English},
+    DOI = {10.1007/s10240-018-0099-2},
+    Keywords = {37A17,37D40,22E50,22F10,37C85,22D40,57R30},
+    zbMATH = {6914160},
+    Zbl = {1478.37002}
+}
+
+@Article{zbMATH06847241,
+    Author = {Mirzakhani, Maryam and Wright, Alex},
+    Title = {Full-rank affine invariant submanifolds},
+    FJournal = {Duke Mathematical Journal},
+    Journal = {Duke Math. J.},
+    ISSN = {0012-7094},
+    Volume = {167},
+    Number = {1},
+    Pages = {1--40},
+    Year = {2018},
+    Language = {English},
+    DOI = {10.1215/00127094-2017-0036},
+    Keywords = {32G15,30F60},
+    zbMATH = {6847241},
+    Zbl = {1435.32016}
+}
+
+@InCollection{zbMATH06843462,
+    Author = {Mirzakhani, Maryam and Vondr{\'a}k, Jan},
+    Title = {Sperner's colorings and optimal partitioning of the simplex},
+    BookTitle = {A journey through discrete mathematics. A tribute to Jiří Matoušek},
+    ISBN = {978-3-319-44478-9; 978-3-319-44479-6},
+    Pages = {615--631},
+    Year = {2017},
+    Publisher = {Cham: Springer},
+    Language = {English},
+    DOI = {10.1007/978-3-319-44479-6_25},
+    Keywords = {05E45,05C65},
+    zbMATH = {6843462},
+    Zbl = {1384.05188}
+}
+
+@Article{zbMATH06786974,
+    Author = {Mirzakhani, Maryam and Wright, Alex},
+    Title = {The boundary of an affine invariant submanifold},
+    FJournal = {Inventiones Mathematicae},
+    Journal = {Invent. Math.},
+    ISSN = {0020-9910},
+    Volume = {209},
+    Number = {3},
+    Pages = {927--984},
+    Year = {2017},
+    Language = {English},
+    DOI = {10.1007/s00222-017-0722-8},
+    Keywords = {37D40,32G15,58A35},
+    zbMATH = {6786974},
+    Zbl = {1378.37069}
+}
+
+@InCollection{zbMATH06786411,
+    Author = {Mirzakhani, Maryam and Vondr{\'a}k, Jan},
+    Title = {Sperner's colorings, hypergraph labeling problems and fair division},
+    BookTitle = {Proceedings of the 26th annual ACM-SIAM symposium on discrete algorithms, SODA 2015, Portland, San Diego, CA, January 4--6, 2015},
+    ISBN = {978-1-61197-374-7; 978-1-61197-373-0},
+    Pages = {873--886},
+    Year = {2015},
+    Publisher = {Philadelphia, PA: Society for Industrial {and} Applied Mathematics (SIAM); New York, NY: Association for Computing Machinery (ACM)},
+    Language = {English},
+    DOI = {10.1137/1.9781611973730.60},
+    Keywords = {05C15,05C65,05C78,68Q17,90C35,91B32},
+    zbMATH = {6786411},
+    Zbl = {1371.05094}
+}
+
+@Article{zbMATH06487150,
+    Author = {Eskin, Alex and Mirzakhani, Maryam and Mohammadi, Amir},
+    Title = {Isolation, equidistribution, and orbit closures for the {{\(\mathrm{SL}(2,\mathbb{R})\)}} action on moduli space},
+    FJournal = {Annals of Mathematics. Second Series},
+    Journal = {Ann. Math. (2)},
+    ISSN = {0003-486X},
+    Volume = {182},
+    Number = {2},
+    Pages = {673--721},
+    Year = {2015},
+    Language = {English},
+    DOI = {10.4007/annals.2015.182.2.7},
+    Keywords = {37C85,37D40,22F10,58D27,37A17},
+    zbMATH = {6487150},
+    Zbl = {1357.37040}
+}
+
+@Article{zbMATH06483699,
+    Author = {Mirzakhani, Maryam and Zograf, Peter},
+    Title = {Towards large genus asymptotics of intersection numbers on moduli spaces of curves},
+    FJournal = {Geometric and Functional Analysis. GAFA},
+    Journal = {Geom. Funct. Anal.},
+    ISSN = {1016-443X},
+    Volume = {25},
+    Number = {4},
+    Pages = {1258--1289},
+    Year = {2015},
+    Language = {English},
+    DOI = {10.1007/s00039-015-0336-5},
+    Keywords = {14H10,32G15,14C17},
+    zbMATH = {6483699},
+    Zbl = {1327.14136}
+}
+
+@Article{zbMATH06186878,
+    Author = {Mirzakhani, Maryam},
+    Title = {Growth of {Weil}-{Petersson} volumes and random hyperbolic surface of large genus},
+    FJournal = {Journal of Differential Geometry},
+    Journal = {J. Differ. Geom.},
+    ISSN = {0022-040X},
+    Volume = {94},
+    Number = {2},
+    Pages = {267--300},
+    Year = {2013},
+    Language = {English},
+    DOI = {10.4310/jdg/1367438650},
+    Keywords = {30F60,32G15},
+    zbMATH = {6186878},
+    Zbl = {1270.30014}
+}
+
+@Article{zbMATH06029038,
+    Author = {Athreya, Jayadev and Bufetov, Alexander and Eskin, Alex and Mirzakhani, Maryam},
+    Title = {Lattice point asymptotics and volume growth on {Teichm{\"u}ller} space},
+    FJournal = {Duke Mathematical Journal},
+    Journal = {Duke Math. J.},
+    ISSN = {0012-7094},
+    Volume = {161},
+    Number = {6},
+    Pages = {1055--1111},
+    Year = {2012},
+    Language = {English},
+    DOI = {10.1215/00127094-1548443},
+    Keywords = {37A25,30F60},
+    zbMATH = {6029038},
+    Zbl = {1246.37009}
+}
+
+@InCollection{zbMATH05971138,
+    Author = {Mirzakhani, Maryam},
+    Title = {On {Weil}-{Petersson} volumes and geometry of random hyperbolic surfaces},
+    BookTitle = {Proceedings of the international congress of mathematicians (ICM 2010), Hyderabad, India, August 19--27, 2010. Vol. II: Invited lectures},
+    ISBN = {978-981-4324-32-8; 978-81-85931-08-3; 978-981-4324-30-4; 978-981-4324-35-9},
+    Pages = {1126--1145},
+    Year = {2011},
+    Publisher = {Hackensack, NJ: World Scientific; New Delhi: Hindustan Book Agency},
+    Language = {English},
+    Keywords = {32G15,57M50,30F60},
+    zbMATH = {5971138},
+    Zbl = {1239.32013}
+}
+
+@Article{zbMATH05919114,
+    Author = {Eskin, Alex and Mirzakhani, Maryam},
+    Title = {Counting closed geodesics in moduli space},
+    FJournal = {Journal of Modern Dynamics},
+    Journal = {J. Mod. Dyn.},
+    ISSN = {1930-5311},
+    Volume = {5},
+    Number = {1},
+    Pages = {71--105},
+    Year = {2011},
+    Language = {English},
+    DOI = {10.3934/jmd.2011.5.71},
+    Keywords = {37A25,30F60},
+    zbMATH = {5919114},
+    Zbl = {1219.37006}
+}
+
+@Article{zbMATH05578717,
+    Author = {Mirzakhani, Maryam},
+    Title = {Growth of the number of simple closed geodesics on hyperbolic surfaces},
+    FJournal = {Annals of Mathematics. Second Series},
+    Journal = {Ann. Math. (2)},
+    ISSN = {0003-486X},
+    Volume = {168},
+    Number = {1},
+    Pages = {97--125},
+    Year = {2008},
+    Language = {English},
+    DOI = {10.4007/annals.2008.168.97},
+    Keywords = {37D40,53C22,32G15,37J50},
+    zbMATH = {5578717},
+    Zbl = {1177.37036}
+}
+
+@Article{zbMATH05306044,
+    Author = {Lindenstrauss, Elon and Mirzakhani, Maryam},
+    Title = {Ergodic theory of the space of measured laminations},
+    FJournal = {IMRN. International Mathematics Research Notices},
+    Journal = {Int. Math. Res. Not.},
+    ISSN = {1073-7928},
+    Volume = {2008},
+    Pages = {49},
+    Note = {Id/No rnm126},
+    Year = {2008},
+    Language = {English},
+    DOI = {10.1093/imrn/rnm126},
+    Keywords = {37C40,37D40},
+    zbMATH = {5306044},
+    Zbl = {1160.37006}
+}
+
+@Article{zbMATH05306024,
+    Author = {Mirzakhani, Maryam},
+    Title = {Ergodic theory of the earthquake flow},
+    FJournal = {IMRN. International Mathematics Research Notices},
+    Journal = {Int. Math. Res. Not.},
+    ISSN = {1073-7928},
+    Volume = {2008},
+    Pages = {39},
+    Note = {Id/No rnm116},
+    Year = {2008},
+    Language = {English},
+    DOI = {10.1093/imrn/rnm116},
+    Keywords = {30F60,30F30,30F45,28D05,37A10,37D40},
+    zbMATH = {5306024},
+    Zbl = {1189.30087}
+}
+
+@InCollection{zbMATH05219561,
+    Author = {Mirzakhani, Maryam},
+    Title = {Random hyperbolic surfaces and measured laminations},
+    BookTitle = {In the tradition of Ahlfors-Bers, IV. Proceedings of the 3rd Ahlfors-Bers colloquium, Ann Arbor, MI, USA, May 19--22, 2005},
+    ISBN = {978-0-8218-4227-0},
+    Pages = {179--198},
+    Year = {2007},
+    Publisher = {Providence, RI: American Mathematical Society (AMS)},
+    Language = {English},
+    Keywords = {32G15,30F60,28D10,28D05},
+    zbMATH = {5219561},
+    Zbl = {1129.32011}
+}
+
+@Article{zbMATH05120452,
+    Author = {Mirzakhani, Maryam},
+    Title = {Weil-{Petersson} volumes and intersection theory on the moduli space of curves},
+    FJournal = {Journal of the American Mathematical Society},
+    Journal = {J. Am. Math. Soc.},
+    ISSN = {0894-0347},
+    Volume = {20},
+    Number = {1},
+    Pages = {1--23},
+    Year = {2007},
+    Language = {English},
+    DOI = {10.1090/S0894-0347-06-00526-1},
+    Keywords = {32G15,14H15},
+    zbMATH = {5120452},
+    Zbl = {1120.32008}
+}
+
+@Article{zbMATH05118879,
+    Author = {Mirzakhani, Maryam},
+    Title = {Simple geodesics and {Weil}-{Petersson} volumes of moduli spaces of bordered {Riemann} surfaces},
+    FJournal = {Inventiones Mathematicae},
+    Journal = {Invent. Math.},
+    ISSN = {0020-9910},
+    Volume = {167},
+    Number = {1},
+    Pages = {179--222},
+    Year = {2007},
+    Language = {English},
+    DOI = {10.1007/s00222-006-0013-2},
+    Keywords = {30F60,32G15,14H81},
+    zbMATH = {5118879},
+    Zbl = {1125.30039}
+}
+
+@Article{zbMATH01234865,
+    Author = {Mirzakhani, M.},
+    Title = {A simple proof of a theorem of {Schur}},
+    FJournal = {American Mathematical Monthly},
+    Journal = {Am. Math. Mon.},
+    ISSN = {0002-9890},
+    Volume = {105},
+    Number = {3},
+    Pages = {260--262},
+    Year = {1998},
+    Language = {English},
+    DOI = {10.2307/2589084},
+    Keywords = {15A27,20H20,15B33},
+    zbMATH = {1234865},
+    Zbl = {0916.15004}
+}
+
+@Article{zbMATH00890665,
+    Author = {Mirzakhani, Maryam},
+    Title = {A small non-4-choosable planar graph},
+    FJournal = {Bulletin of the Institute of Combinatorics and its Applications},
+    Journal = {Bull. Inst. Comb. Appl.},
+    ISSN = {1183-1278},
+    Volume = {17},
+    Pages = {15--18},
+    Year = {1996},
+    Language = {English},
+    Keywords = {05C10,05C15},
+    zbMATH = {890665},
+    Zbl = {0860.05029}
+}
+
+@InCollection{zbMATH00828005,
+    Author = {Mahmoodian, E. S. and Mirzakhani, Maryam},
+    Title = {Decomposition of complete tripartite graphs into 5-cycles},
+    BookTitle = {Combinatorics advances. Papers presented at the 25th annual Iranian mathematics conference, AIMC 25, held at Sharif University of Technology in Tehran, Iran, March 28-31, 1994},
+    ISBN = {0-7923-3574-0},
+    Pages = {235--241},
+    Year = {1995},
+    Publisher = {Dordrecht: Kluwer Academic Publishers},
+    Language = {English},
+    Keywords = {05C70,05C38},
+    zbMATH = {828005},
+    Zbl = {0837.05088}
+}
+
+
+
+
+@article {MR4046008,
+    AUTHOR = {Mirzakhani, Maryam and Petri, Bram},
+     TITLE = {Lengths of closed geodesics on random surfaces of large genus},
+   JOURNAL = {Comment. Math. Helv.},
+  FJOURNAL = {Commentarii Mathematici Helvetici. A Journal of the Swiss
+              Mathematical Society},
+    VOLUME = {94},
+      YEAR = {2019},
+    NUMBER = {4},
+     PAGES = {869--889},
+      ISSN = {0010-2571},
+   MRCLASS = {57M50 (32G15)},
+  MRNUMBER = {4046008},
+MRREVIEWER = {Jayadev S. Athreya},
+       DOI = {10.4171/cmh/477},
+       URL = {https://doi.org/10.4171/cmh/477},
+}
+    
+
+@article {MR3910070,
+    AUTHOR = {Eskin, Alex and Mirzakhani, Maryam and Rafi, Kasra},
+     TITLE = {Counting closed geodesics in strata},
+   JOURNAL = {Invent. Math.},
+  FJOURNAL = {Inventiones Mathematicae},
+    VOLUME = {215},
+      YEAR = {2019},
+    NUMBER = {2},
+     PAGES = {535--607},
+      ISSN = {0020-9910},
+   MRCLASS = {37D40 (32G15)},
+  MRNUMBER = {3910070},
+MRREVIEWER = {Rodrigo Trevi\~{n}o},
+       DOI = {10.1007/s00222-018-0832-y},
+       URL = {https://doi.org/10.1007/s00222-018-0832-y},
+}
+    
+
+@article {MR3814652,
+    AUTHOR = {Eskin, Alex and Mirzakhani, Maryam},
+     TITLE = {Invariant and stationary measures for the {${\rm SL}(2,\Bbb
+              R)$} action on moduli space},
+   JOURNAL = {Publ. Math. Inst. Hautes \'{E}tudes Sci.},
+  FJOURNAL = {Publications Math\'{e}matiques. Institut de Hautes \'{E}tudes
+              Scientifiques},
+    VOLUME = {127},
+      YEAR = {2018},
+     PAGES = {95--324},
+      ISSN = {0073-8301},
+   MRCLASS = {37D40 (22E50 37C85)},
+  MRNUMBER = {3814652},
+MRREVIEWER = {Thomas Ward},
+       DOI = {10.1007/s10240-018-0099-2},
+       URL = {https://doi.org/10.1007/s10240-018-0099-2},
+}
+    
+
+@article {MR3743698,
+    AUTHOR = {Mirzakhani, Maryam and Wright, Alex},
+     TITLE = {Full-rank affine invariant submanifolds},
+   JOURNAL = {Duke Math. J.},
+  FJOURNAL = {Duke Mathematical Journal},
+    VOLUME = {167},
+      YEAR = {2018},
+    NUMBER = {1},
+     PAGES = {1--40},
+      ISSN = {0012-7094},
+   MRCLASS = {32G15 (30F30 30F60 37D50)},
+  MRNUMBER = {3743698},
+MRREVIEWER = {Athanase Papadopoulos},
+       DOI = {10.1215/00127094-2017-0036},
+       URL = {https://doi.org/10.1215/00127094-2017-0036},
+}
+    
+
+@incollection {MR3726616,
+    AUTHOR = {Mirzakhani, Maryam and Vondr\'{a}k, Jan},
+     TITLE = {Sperner's colorings and optimal partitioning of the simplex},
+ BOOKTITLE = {A journey through discrete mathematics},
+     PAGES = {615--631},
+ PUBLISHER = {Springer, Cham},
+      YEAR = {2017},
+   MRCLASS = {52A35 (05C15 68U05)},
+  MRNUMBER = {3726616},
+MRREVIEWER = {Eoin Long},
+}
+    
+
+@article {MR3681397,
+    AUTHOR = {Mirzakhani, Maryam and Wright, Alex},
+     TITLE = {The boundary of an affine invariant submanifold},
+   JOURNAL = {Invent. Math.},
+  FJOURNAL = {Inventiones Mathematicae},
+    VOLUME = {209},
+      YEAR = {2017},
+    NUMBER = {3},
+     PAGES = {927--984},
+      ISSN = {0020-9910},
+   MRCLASS = {37D40 (32G15 58A35)},
+  MRNUMBER = {3681397},
+MRREVIEWER = {Jayadev S. Athreya},
+       DOI = {10.1007/s00222-017-0722-8},
+       URL = {https://doi.org/10.1007/s00222-017-0722-8},
+}
+    
+
+@inproceedings {MR3451084,
+    AUTHOR = {Mirzakhani, Maryam and Vondr\'{a}k, Jan},
+     TITLE = {Sperner's colorings, hypergraph labeling problems and fair
+              division},
+ BOOKTITLE = {Proceedings of the {T}wenty-{S}ixth {A}nnual {ACM}-{SIAM}
+              {S}ymposium on {D}iscrete {A}lgorithms},
+     PAGES = {873--886},
+ PUBLISHER = {SIAM, Philadelphia, PA},
+      YEAR = {2015},
+   MRCLASS = {68R10 (05C15 68Q17 90C35)},
+  MRNUMBER = {3451084},
+       DOI = {10.1137/1.9781611973730.60},
+       URL = {https://doi.org/10.1137/1.9781611973730.60},
+}
+    
+
+@article {MR3418528,
+    AUTHOR = {Eskin, Alex and Mirzakhani, Maryam and Mohammadi, Amir},
+     TITLE = {Isolation, equidistribution, and orbit closures for the {${\rm
+              SL}(2,\Bbb R)$} action on moduli space},
+   JOURNAL = {Ann. of Math. (2)},
+  FJOURNAL = {Annals of Mathematics. Second Series},
+    VOLUME = {182},
+      YEAR = {2015},
+    NUMBER = {2},
+     PAGES = {673--721},
+      ISSN = {0003-486X},
+   MRCLASS = {58D27 (22F10 32G15 37C85 37D40 60B15)},
+  MRNUMBER = {3418528},
+MRREVIEWER = {Boris Hasselblatt},
+       DOI = {10.4007/annals.2015.182.2.7},
+       URL = {https://doi.org/10.4007/annals.2015.182.2.7},
+}
+    
+
+@article {MR3385633,
+    AUTHOR = {Mirzakhani, Maryam and Zograf, Peter},
+     TITLE = {Towards large genus asymptotics of intersection numbers on
+              moduli spaces of curves},
+   JOURNAL = {Geom. Funct. Anal.},
+  FJOURNAL = {Geometric and Functional Analysis},
+    VOLUME = {25},
+      YEAR = {2015},
+    NUMBER = {4},
+     PAGES = {1258--1289},
+      ISSN = {1016-443X},
+   MRCLASS = {32G15 (14H15 30F60)},
+  MRNUMBER = {3385633},
+MRREVIEWER = {Milagros Izquierdo},
+       DOI = {10.1007/s00039-015-0336-5},
+       URL = {https://doi.org/10.1007/s00039-015-0336-5},
+}
+    
+
+@article {MR3080483,
+    AUTHOR = {Mirzakhani, Maryam},
+     TITLE = {Growth of {W}eil-{P}etersson volumes and random hyperbolic
+              surfaces of large genus},
+   JOURNAL = {J. Differential Geom.},
+  FJOURNAL = {Journal of Differential Geometry},
+    VOLUME = {94},
+      YEAR = {2013},
+    NUMBER = {2},
+     PAGES = {267--300},
+      ISSN = {0022-040X},
+   MRCLASS = {32G15 (53C22 60B05)},
+  MRNUMBER = {3080483},
+MRREVIEWER = {Zongliang Sun},
+       URL = {http://projecteuclid.org/euclid.jdg/1367438650},
+}
+    
+
+@article {MR2913101,
+    AUTHOR = {Athreya, Jayadev and Bufetov, Alexander and Eskin, Alex and
+              Mirzakhani, Maryam},
+     TITLE = {Lattice point asymptotics and volume growth on {T}eichm\"{u}ller
+              space},
+   JOURNAL = {Duke Math. J.},
+  FJOURNAL = {Duke Mathematical Journal},
+    VOLUME = {161},
+      YEAR = {2012},
+    NUMBER = {6},
+     PAGES = {1055--1111},
+      ISSN = {0012-7094},
+   MRCLASS = {32G15 (30F60 37D40)},
+  MRNUMBER = {2913101},
+MRREVIEWER = {Lee-Peng Teo},
+       DOI = {10.1215/00127094-1548443},
+       URL = {https://doi.org/10.1215/00127094-1548443},
+}
+    
+
+@article {MR2787598,
+    AUTHOR = {Eskin, Alex and Mirzakhani, Maryam},
+     TITLE = {Counting closed geodesics in moduli space},
+   JOURNAL = {J. Mod. Dyn.},
+  FJOURNAL = {Journal of Modern Dynamics},
+    VOLUME = {5},
+      YEAR = {2011},
+    NUMBER = {1},
+     PAGES = {71--105},
+      ISSN = {1930-5311},
+   MRCLASS = {37D40 (30F60 32G15 37A25)},
+  MRNUMBER = {2787598},
+MRREVIEWER = {Boris Hasselblatt},
+       DOI = {10.3934/jmd.2011.5.71},
+       URL = {https://doi.org/10.3934/jmd.2011.5.71},
+}
+    
+
+@inproceedings {MR2827834,
+    AUTHOR = {Mirzakhani, Maryam},
+     TITLE = {On {W}eil-{P}etersson volumes and geometry of random
+              hyperbolic surfaces},
+ BOOKTITLE = {Proceedings of the {I}nternational {C}ongress of
+              {M}athematicians. {V}olume {II}},
+     PAGES = {1126--1145},
+ PUBLISHER = {Hindustan Book Agency, New Delhi},
+      YEAR = {2010},
+   MRCLASS = {32G15 (14H70 30F10 30F60 57M50)},
+  MRNUMBER = {2827834},
+MRREVIEWER = {V. V. Chueshev},
+}
+    
+
+@article {MR2424174,
+    AUTHOR = {Lindenstrauss, Elon and Mirzakhani, Maryam},
+     TITLE = {Ergodic theory of the space of measured laminations},
+   JOURNAL = {Int. Math. Res. Not. IMRN},
+  FJOURNAL = {International Mathematics Research Notices. IMRN},
+      YEAR = {2008},
+    NUMBER = {4},
+     PAGES = {Art. ID rnm126, 49},
+      ISSN = {1073-7928},
+   MRCLASS = {37A05 (28D15 30F30 37C85 57M60)},
+  MRNUMBER = {2424174},
+MRREVIEWER = {Athanase Papadopoulos},
+       DOI = {10.1093/imrn/rnm126},
+       URL = {https://doi.org/10.1093/imrn/rnm126},
+}
+    
+
+@article {MR2416997,
+    AUTHOR = {Mirzakhani, Maryam},
+     TITLE = {Ergodic theory of the earthquake flow},
+   JOURNAL = {Int. Math. Res. Not. IMRN},
+  FJOURNAL = {International Mathematics Research Notices. IMRN},
+      YEAR = {2008},
+    NUMBER = {3},
+     PAGES = {Art. ID rnm116, 39},
+      ISSN = {1073-7928},
+   MRCLASS = {32G15 (28D10 30F10 30F45 30F60 37A10 37D40)},
+  MRNUMBER = {2416997},
+MRREVIEWER = {Athanase Papadopoulos},
+       DOI = {10.1093/imrn/rnm116},
+       URL = {https://doi.org/10.1093/imrn/rnm116},
+}
+    
+
+@article {MR2415399,
+    AUTHOR = {Mirzakhani, Maryam},
+     TITLE = {Growth of the number of simple closed geodesics on hyperbolic
+              surfaces},
+   JOURNAL = {Ann. of Math. (2)},
+  FJOURNAL = {Annals of Mathematics. Second Series},
+    VOLUME = {168},
+      YEAR = {2008},
+    NUMBER = {1},
+     PAGES = {97--125},
+      ISSN = {0003-486X},
+   MRCLASS = {32G15},
+  MRNUMBER = {2415399},
+MRREVIEWER = {Hsian-Hua Tseng},
+       DOI = {10.4007/annals.2008.168.97},
+       URL = {https://doi.org/10.4007/annals.2008.168.97},
+}
+    
+
+@incollection {MR2342816,
+    AUTHOR = {Mirzakhani, Maryam},
+     TITLE = {Random hyperbolic surfaces and measured laminations},
+ BOOKTITLE = {In the tradition of {A}hlfors-{B}ers. {IV}},
+    SERIES = {Contemp. Math.},
+    VOLUME = {432},
+     PAGES = {179--198},
+ PUBLISHER = {Amer. Math. Soc., Providence, RI},
+      YEAR = {2007},
+   MRCLASS = {32G15 (28D05 30F60 37A05)},
+  MRNUMBER = {2342816},
+MRREVIEWER = {Athanase Papadopoulos},
+       DOI = {10.1090/conm/432/08308},
+       URL = {https://doi.org/10.1090/conm/432/08308},
+}
+    
+
+@article {MR2264808,
+    AUTHOR = {Mirzakhani, Maryam},
+     TITLE = {Simple geodesics and {W}eil-{P}etersson volumes of moduli
+              spaces of bordered {R}iemann surfaces},
+   JOURNAL = {Invent. Math.},
+  FJOURNAL = {Inventiones Mathematicae},
+    VOLUME = {167},
+      YEAR = {2007},
+    NUMBER = {1},
+     PAGES = {179--222},
+      ISSN = {0020-9910},
+   MRCLASS = {32G15 (14H15)},
+  MRNUMBER = {2264808},
+MRREVIEWER = {Hsian-Hua Tseng},
+       DOI = {10.1007/s00222-006-0013-2},
+       URL = {https://doi.org/10.1007/s00222-006-0013-2},
+}
+    
+
+@article {MR2257394,
+    AUTHOR = {Mirzakhani, Maryam},
+     TITLE = {Weil-{P}etersson volumes and intersection theory on the moduli
+              space of curves},
+   JOURNAL = {J. Amer. Math. Soc.},
+  FJOURNAL = {Journal of the American Mathematical Society},
+    VOLUME = {20},
+      YEAR = {2007},
+    NUMBER = {1},
+     PAGES = {1--23},
+      ISSN = {0894-0347},
+   MRCLASS = {14H15 (14N35 32G15)},
+  MRNUMBER = {2257394},
+MRREVIEWER = {Hsian-Hua Tseng},
+       DOI = {10.1090/S0894-0347-06-00526-1},
+       URL = {https://doi.org/10.1090/S0894-0347-06-00526-1},
+}
+    
+
+@book {MR2705986,
+    AUTHOR = {Mirzakhani, Maryam},
+     TITLE = {Simple geodesics on hyperbolic surfaces and the volume of the
+              moduli space of curves},
+      NOTE = {Thesis (Ph.D.)--Harvard University},
+ PUBLISHER = {ProQuest LLC, Ann Arbor, MI},
+      YEAR = {2004},
+     PAGES = {130},
+      ISBN = {978-0496-79175-0},
+   MRCLASS = {Thesis},
+  MRNUMBER = {2705986},
+       URL =
+              {http://gateway.proquest.com/openurl?url_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:dissertation&res_dat=xri:pqdiss&rft_dat=xri:pqdiss:3131935},
+}
+    
+
+@article {MR1615548,
+    AUTHOR = {Mirzakhani, M.},
+     TITLE = {A simple proof of a theorem of {S}chur},
+   JOURNAL = {Amer. Math. Monthly},
+  FJOURNAL = {American Mathematical Monthly},
+    VOLUME = {105},
+      YEAR = {1998},
+    NUMBER = {3},
+     PAGES = {260--262},
+      ISSN = {0002-9890},
+   MRCLASS = {15A27},
+  MRNUMBER = {1615548},
+       DOI = {10.2307/2589084},
+       URL = {https://doi.org/10.2307/2589084},
+}
+    
+
+@article {MR1386951,
+    AUTHOR = {Mirzakhani, Maryam},
+     TITLE = {A small non-{$4$}-choosable planar graph},
+   JOURNAL = {Bull. Inst. Combin. Appl.},
+  FJOURNAL = {Bulletin of the Institute of Combinatorics and its
+              Applications},
+    VOLUME = {17},
+      YEAR = {1996},
+     PAGES = {15--18},
+      ISSN = {1183-1278},
+   MRCLASS = {05C15},
+  MRNUMBER = {1386951},
+}
+    
+
+@incollection {MR1366852,
+    AUTHOR = {Mahmoodian, E. S. and Mirzakhani, Maryam},
+     TITLE = {Decomposition of complete tripartite graphs into {$5$}-cycles},
+ BOOKTITLE = {Combinatorics advances ({T}ehran, 1994)},
+    SERIES = {Math. Appl.},
+    VOLUME = {329},
+     PAGES = {235--241},
+ PUBLISHER = {Kluwer Acad. Publ., Dordrecht},
+      YEAR = {1995},
+   MRCLASS = {05C70 (05C38)},
+  MRNUMBER = {1366852},
+}
+    
+
+
+
+Perelman’s Poincaré papers from arXiv
+
+@misc{https://doi.org/10.48550/arxiv.math/0211159,
+  doi = {10.48550/ARXIV.MATH/0211159},
+  
+  url = {https://arxiv.org/abs/math/0211159},
+  
+  author = {Perelman, Grisha},
+  
+  keywords = {Differential Geometry (math.DG), FOS: Mathematics, FOS: Mathematics, 53C},
+  
+  title = {The entropy formula for the Ricci flow and its geometric applications},
+  
+  publisher = {arXiv},
+  
+  year = {2002},
+  
+  copyright = {Assumed arXiv.org perpetual, non-exclusive license to distribute this article for submissions made before January 2004}
+}
+
+@misc{https://doi.org/10.48550/arxiv.math/0303109,
+  doi = {10.48550/ARXIV.MATH/0303109},
+  
+  url = {https://arxiv.org/abs/math/0303109},
+  
+  author = {Perelman, Grisha},
+  
+  keywords = {Differential Geometry (math.DG), FOS: Mathematics, FOS: Mathematics, 53C},
+  
+  title = {Ricci flow with surgery on three-manifolds},
+  
+  publisher = {arXiv},
+  
+  year = {2003},
+  
+  copyright = {Assumed arXiv.org perpetual, non-exclusive license to distribute this article for submissions made before January 2004}
+}
+
+@misc{https://doi.org/10.48550/arxiv.math/0307245,
+  doi = {10.48550/ARXIV.MATH/0307245},
+  
+  url = {https://arxiv.org/abs/math/0307245},
+  
+  author = {Perelman, Grisha},
+  
+  keywords = {Differential Geometry (math.DG), FOS: Mathematics, FOS: Mathematics, 53C},
+  
+  title = {Finite extinction time for the solutions to the Ricci flow on certain three-manifolds},
+  
+  publisher = {arXiv},
+  
+  year = {2003},
+  
+  copyright = {Assumed arXiv.org perpetual, non-exclusive license to distribute this article for submissions made before January 2004}
+}

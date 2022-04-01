@@ -3,7 +3,7 @@
     "name": "LaTeX",
     "organization": "Marco Varisco",
     "description": "Adds support for LaTeX.",
-    "version": "0.3",
+    "version": "0.4",
     "categories": [
         "languages",
         "tasks",
@@ -13,18 +13,18 @@
     "repository": "https://github.com/mava/nova-latex",
     "bugs": "https://github.com/mava/nova-latex/issues",
     "license": "MIT",
-
+    
     "main": "main.js",
-
+    
     "entitlements": {
         "process": true
     },
-
+    
     "activationEvents": [
         "onLanguage:latex",
         "onWorkspaceContains:*.tex"
     ],
-
+    
     "commands": {
         "extensions": [
           {
@@ -33,7 +33,7 @@
           }
         ]
     },
-
+    
     "config": [
         {
             "key": "novalatex.option-latexmk",
