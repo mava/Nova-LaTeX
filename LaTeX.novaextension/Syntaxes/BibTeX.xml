@@ -80,10 +80,16 @@
                 <expression>\b[^\s=]+\b(?!\s*=)(?=\s*\,)</expression>
             </scope>
             <scope name="bibtex.field">
-                <!-- Comment out <symbol> block, otherwise Nova slows down noticeably with large .bib files -->
-                <!-- <symbol type="property">
+                <symbol type="block">
+                <!-- Ideally this should be `<symbol type="property">`,
+                but with any symbol type that appears in the symbols sidebar
+                Nova becomes very sluggish with large files.
+                **This is a Nova problem with languages with lots of symbols
+                (for example, HTML), and not a problem with this syntax.**
+                Since `.bib` files tend to be large and have almost one field
+                scope per line, better leave this symbol off the sidebar. -->
                     <context behavior="subtree" />
-                </symbol> -->
+                </symbol>
                 <starts-with>
                     <expression>\b[^\s=]+\b(?=\s*=)</expression>
                     <capture number="0" name="bibtex.field.tag.attribute.name" />
