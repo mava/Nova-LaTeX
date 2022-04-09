@@ -1,3 +1,8 @@
+## Version 0.5
+
+- Added custom task templates (which, for example, can be used in Nova 9’s new **Task Pipelines**)
+- Tasks now fail gracefully if unavailable (e.g., when the active tab is a terminal and no main `.tex` file has been chosen)
+
 ## Version 0.4
 
 - Added BibTeX (`.bib`) syntax highlighting, outlining, and folding

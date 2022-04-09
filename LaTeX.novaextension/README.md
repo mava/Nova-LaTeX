@@ -33,6 +33,7 @@ There is also a **Clean** (⇧⌘K) task to remove TeX auxiliary files.
 These tasks become automatically available in any project containing `.tex` files.
 The default engine used to build PDF files (pdfLaTeX or XeLaTex or LuaLaTeX) can be chosen in this extension’s **Preferences** tab, and it can also be configured on a per-project basis in **Project → Project Settings**.
 By default the tasks use whichever file is active, but there is also an option to choose a main (root) `.tex` file in the **Project Settings**.
+Custom LaTeX tasks can also be added&#8239;—&#8239;and used, for example, in **Task Pipelines**.
 
 The **Run** (⌘R) task opens in Skim the PDF corresponding to the LaTeX source in Nova’s active editor, and highlights the line under the cursor’s position in Nova.
 By default, Skim is kept in the background, but this can be changed in this extension’s **Preferences** tab.
@@ -60,7 +61,7 @@ Instead of providing an interface to some of `latexmk`’s many, many configurat
 These can be tracked in revision control systems, shared with collaborators, and used in other apps and operating systems.
 
 The Build, Run, and Clean tasks are automatically available.
-Technically, they are implemented as [Task Assistants, not Task Templates](https://docs.nova.app/extensions/run-configurations/), because for most use cases “requiring a user to add an instance of a task via a Task Template may be too much overhead[.”](https://docs.nova.app/extensions/run-configurations/#defining-a-task-assistant)
+Technically, they are implemented [as Task Assistants, and *not only* as Task Templates](https://docs.nova.app/extensions/run-configurations/), because for most use cases “requiring a user to add an instance of a task via a Task Template may be too much overhead[.”](https://docs.nova.app/extensions/run-configurations/#defining-a-task-assistant)
 This way it’s also possible to open a single `.tex` file in Nova and just build it, with no need to first choose a project for the corresponding window.
 <!-- “You have not yet chosen a project for this window.” -->
 
