@@ -1,3 +1,7 @@
+## Version 0.7
+
+- ***New:*** Added an option in **Preferences** to use Skim’s reading bar to indicate position
+
 ## Version 0.6
 
 - ***New:*** `.bib` files now also have smart code completion, contextual hover information, and issue reports (provided by the language server)

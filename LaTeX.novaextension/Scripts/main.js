@@ -9,6 +9,7 @@ exports.activate = function() {
     });
     
     nova.commands.register("novalatex.help", () => nova.extension.openReadme());
+ // nova.commands.register("novalatex.pref", () => nova.openConfig("info.varisco.LaTeX"));
 }
 
 exports.deactivate = function() {
@@ -79,6 +80,16 @@ class LatexLanguageServer {
 
 
 class LatexTaskProvider {
+    constructor() {
+        switch (nova.config.get("novalatex.option-skim")) {
+            case "":
+                nova.config.set("novalatex.option-skim-background", false);
+                // fall through
+            case "-background":
+                nova.config.set("novalatex.option-skim", undefined);
+        }
+    }
+    
     provideTasks() {
         let task = new Task("LaTeX → PDF");
         task.setAction(Task.Build, new TaskResolvableAction());
@@ -103,12 +114,16 @@ class LatexTaskProvider {
             if (context.action === Task.Run) {
                 command = nova.path.join(nova.config.get("novalatex.path-skim"), "Contents/SharedSupport/displayline");
                 args = [
-                    nova.config.get("novalatex.option-skim"),
                     (activefile ? getLnCol(editor)[0] : 0).toString(),
                     nova.path.join(nova.path.dirname(mainfile), nova.path.splitext(mainfile)[0]) + ".pdf"
                 ];
                 if (activefile) {
                     args.push(activefile);
+                }
+                for (const option of ["-readingbar", "-background"]) {
+                    if (nova.config.get("novalatex.option-skim" + option, "boolean")) {
+                        args.unshift(option);
+                    }
                 }
             } else {
                 if (context.action === Task.Build) {

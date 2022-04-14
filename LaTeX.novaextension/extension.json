@@ -3,7 +3,7 @@
     "name": "LaTeX",
     "organization": "Marco Varisco",
     "description": "Adds support for LaTeX.",
-    "version": "0.6",
+    "version": "0.7",
     "categories": [
         "languages",
         "tasks",
@@ -52,15 +52,16 @@
             "description": "Choose the default engine used to build PDF files. Each project can override this choice in its Project Settings."
         },
         {
-            "key": "novalatex.option-skim",
-            "title": "Skim Behavior",
-            "type": "enum",
-            "radio": true,
-            "values": [
-                ["-background", "Do not bring Skim to the foreground"],
-                ["", "Bring Skim to the foreground"]
-            ],
-            "default": "-background"
+            "key": "novalatex.option-skim-background",
+            "title": "Keep Skim in the background",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "novalatex.option-skim-readingbar",
+            "title": "Use Skim’s reading bar to indicate position",
+            "type": "boolean",
+            "default": false
         },
         {
             "key": "novalatex.path-skim",
