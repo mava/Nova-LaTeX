@@ -42,13 +42,13 @@ class LatexLanguageServer {
         var serverOptions = {
             path: "/usr/bin/env",
             args: [
-                path || "texlab",
+                path?.trim() || "texlab",
                 "-v"
             ]
         };
         var clientOptions = {
             // The set of document syntaxes for which the server is valid
-            syntaxes: ["latex"]
+            syntaxes: ["latex", "bibtex"]
         };
         var client = new LanguageClient("novalatex.server", "LaTeX Language Server", serverOptions, clientOptions);
         

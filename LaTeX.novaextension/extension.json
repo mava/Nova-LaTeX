@@ -3,7 +3,7 @@
     "name": "LaTeX",
     "organization": "Marco Varisco",
     "description": "Adds support for LaTeX.",
-    "version": "0.5",
+    "version": "0.6",
     "categories": [
         "languages",
         "tasks",
