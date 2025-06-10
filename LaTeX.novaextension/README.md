@@ -51,7 +51,7 @@ Finally, the **Symbols Sidebar** shows an outline of the LaTeX document structur
 
 This extension is very elementary.
 As the name suggests, it only supports LaTeX (no ConTeXt, no plain TeX, …).
-It uses [`latexmk`](https://www.personal.psu.edu/~jcc8/software/latexmk/) for its **Build** and **Clean** tasks:
+It uses [`latexmk`](https://www.cantab.net/users/johncollins/latexmk/) for its **Build** and **Clean** tasks:
 
 - **Build** calls `latexmk 🔨 -interaction=nonstopmode -synctex=1 -cd 📜`, where `🔨` is either `-pdflatex` or `-xelatex` or `-lualatex` or empty, according to the choice in **Preferences**, and `📜` is the active file or the one chosen in **Project Settings.**
 - **Clean** simply calls `latexmk -c -cd 📜`.
