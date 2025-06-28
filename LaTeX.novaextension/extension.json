@@ -3,7 +3,7 @@
     "name": "LaTeX",
     "organization": "Marco Varisco",
     "description": "Adds support for LaTeX.",
-    "version": "0.7",
+    "version": "0.8",
     "categories": [
         "languages",
         "tasks",
@@ -14,7 +14,7 @@
     "bugs": "https://github.com/mava/nova-latex/issues",
     "license": "MIT",
     
-    "min_runtime": "9.2",
+    "min_runtime": "10",
     
     "main": "main.js",
     

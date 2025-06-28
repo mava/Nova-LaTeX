@@ -1,3 +1,7 @@
+## Version 0.8
+
+- ***New:*** Language syntaxes for both LaTeX and BibTeX have been totally rewritten using Tree-sitter, with much improved highlighting, symbolization, and folding
+
 ## Version 0.7
 
 - ***New:*** Added an option in **Preferences** to use Skim’s reading bar to indicate position
@@ -13,7 +17,7 @@
 
 ## Version 0.4
 
-- ***New:*** Added BibTeX (`.bib`) syntax highlighting, outlining, and folding
+- ***New:*** Added BibTeX (`.bib`) syntax highlighting, symbolization, and folding
 
 ## Version 0.3
 

@@ -1,6 +1,6 @@
-This extension provides basic support for [**LaTeX**](https://en.wikipedia.org/wiki/LaTeX):
+This extension provides support for [**LaTeX**](https://en.wikipedia.org/wiki/LaTeX):
 
-- Syntax highlighting, document outlining, and code folding.
+- Syntax highlighting, symbolization, and folding.
 - Building and previewing PDF files, with LaTeX ⇌ PDF synchronization.
 - Smart code completion, contextual hover information, and issue reports.
 
@@ -9,20 +9,17 @@ This extension provides basic support for [**LaTeX**](https://en.wikipedia.org/w
 
 ## Requirements
 
-- Syntax highlighting, document outlining, and code folding work out of the box, for LaTeX (`.tex`) and BibTeX (`.bib`) files.
+- Syntax highlighting, symbolization, and folding work out of the box, for LaTeX (`.tex`) and BibTeX (`.bib`) files.
 
 - To build PDF files from LaTeX sources, [**MacTeX**](https://www.tug.org/mactex/) (or any other TeX distribution with `latexmk`) is required.
 
 - To preview PDF files with LaTeX ⇌ PDF synchronization, the PDF reader [**Skim**](https://skim-app.sourceforge.io) is required.
 To enable jumping back to the LaTeX source line in Nova corresponding to a point in a PDF in Skim, open Skim’s **Preferences → Sync** and then choose **Nova** from the **PDF–TeX Sync Preset** dropdown menu.
-This requires Nova&#8239;≥&#8239;8.0 & Skim&#8239;≥&#8239;1.6.9.
 
 - Smart code completion, contextual hover information, and issue reports require the [**TexLab Language Server**](https://github.com/latex-lsp/texlab). The easiest way to install TexLab is to first install [Homebrew](https://brew.sh) and then run `brew install texlab` in a terminal.
 If no language server is installed or the path provided in this extension’s **Preferences** tab is incorrect, then smart code completion, contextual hover information, and issue reports are just not available, but everything else works.
 Other LaTeX language servers may also be used.
 Make sure that the **Language Server** features are enabled in Nova’s **Preferences → Editor → Extensions** (they are enabled by default).
-
-	> N.B. This extension and its developer are not affiliated with TexLab.
 
 
 ## Usage
@@ -31,7 +28,7 @@ To build and preview PDF files, this extension provides **Build** (⌘B) and **R
 There is also a **Clean** (⇧⌘K) task to remove TeX auxiliary files.
 
 These tasks become automatically available in any project containing `.tex` files.
-The default engine used to build PDF files (pdfLaTeX or XeLaTex or LuaLaTeX) can be chosen in this extension’s **Preferences** tab, and it can also be configured on a per-project basis in **Project → Project Settings**.
+The default engine (pdfLaTeX or XeLaTex or LuaLaTeX) used to **Build** (⌘B) PDF files can be chosen in this extension’s **Preferences** tab, and it can also be configured on a per-project basis in **Project → Project Settings**.
 By default the tasks use whichever file is active, but there is also an option to choose a main (root) `.tex` file in the **Project Settings**.
 Custom LaTeX tasks can also be added&#8239;—&#8239;and used, for example, in **Task Pipelines**.
 
@@ -43,13 +40,13 @@ Make sure that **Nova** is selected in Skim’s **PDF–TeX Sync** preferences, 
 
 The log files produced during the **Build** (⌘B) task are available in Nova’s **Reports Sidebar**.
 Compilation errors and warnings are displayed in the **Issues Sidebar** and in the editor gutter (this requires the TexLab Language Server).
-Finally, the **Symbols Sidebar** shows an outline of the LaTeX document structure.
+Finally, outlines of LaTeX and BibTeX files are shown in the **Symbols Sidebar**, which can be used to navigate the documents.
 
 ***
 
-## Technical Implementation Details
+## Technical Implementation Details & Credits
 
-This extension is very elementary.
+This extension is elementary.
 As the name suggests, it only supports LaTeX (no ConTeXt, no plain TeX, …).
 It uses [`latexmk`](https://www.cantab.net/users/johncollins/latexmk/) for its **Build** and **Clean** tasks:
 
@@ -69,8 +66,9 @@ The cool stuff (smart code completion, contextual hover information, issue repor
 Nova’s implementation of the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/) is great, and TexLab’s implementation of the LSP for LaTeX is great&#8239;—&#8239;why reinvent the wheel?
 In fact, this extension uses nothing more than Nova’s Language Server Extension template (and so it can be run with other language servers; for example, [Digestif](https://github.com/astoff/digestif)).
 
-Syntax highlighting and symbolication are also rudimentary, but seem to get the job done fast.
+Syntax highlighting, symbolization, and folding are based on the [Tree-sitter](https://tree-sitter.github.io/tree-sitter/) parsers [tree-sitter-latex](https://github.com/latex-lsp/tree-sitter-latex) and [tree-sitter-bibtex](https://github.com/latex-lsp/tree-sitter-bibtex).
+
 LaTeX ⇌ PDF synchronization just works thanks to [Skim](https://skim-app.sourceforge.io)’s implementation of the magic of [SyncTeX](https://github.com/jlaurens/synctex).
 
 I cobbled together this extension around my (perhaps idiosyncratic) LaTeX workflow, and I’ve been happily doing all my TeXing in Nova ever since.
-Hopefully other LaTeX users may find this extension useful, too!
+Hopefully, other LaTeX users may find this extension useful, too!
