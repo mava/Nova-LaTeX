@@ -47,7 +47,7 @@ Finally, outlines of LaTeX and BibTeX files are shown in the **Symbols Sidebar**
 ## Technical Implementation Details & Credits
 
 This extension is elementary.
-As the name suggests, it only supports LaTeX (no ConTeXt, no plain TeX, …).
+As the name suggests, it only supports LaTeX (and BibTeX), but no ConTeXt, no plain TeX, etc.
 It uses [`latexmk`](https://www.cantab.net/users/johncollins/latexmk/) for its **Build** and **Clean** tasks:
 
 - **Build** calls `latexmk 🔨 -interaction=nonstopmode -synctex=1 -cd 📜`, where `🔨` is either `-pdflatex` or `-xelatex` or `-lualatex` or empty, according to the choice in **Preferences**, and `📜` is the active file or the one chosen in **Project Settings.**

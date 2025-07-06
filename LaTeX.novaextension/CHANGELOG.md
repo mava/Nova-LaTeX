@@ -1,3 +1,7 @@
+## Version 0.9
+
+- ***Fixed:*** New Tree-sitter syntaxes now also work with older versions of Nova
+
 ## Version 0.8
 
 - ***New:*** Language syntaxes for both LaTeX and BibTeX have been totally rewritten using Tree-sitter, with much improved highlighting, symbolization, and folding
