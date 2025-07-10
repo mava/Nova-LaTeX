@@ -8,7 +8,7 @@
   (curly_group) @displayname
   (#strip! @displayname "[{}]")
   (#prefix! @displayname "§ ")
-  (#set! role heading)
+  (#set! role bookmark)
 ) @subtree
 
 ; Environments
@@ -17,7 +17,7 @@
     name: (curly_group_text
       (text) @name))
   ) @subtree
-  (#set! role tag)
+  (#set! role tag-script)
   (#set! autoclose.expression "\end")
   (#set! autoclose.completion "{${name}}")
 )
@@ -26,7 +26,7 @@
   "\\[" @name
   ) @subtree
   (#append! @name " • \\\]")
-  (#set! role tag)
+  (#set! role tag-script)
 )
 
 ; Labels, items
@@ -37,7 +37,7 @@
   ) @subtree
   (#strip! @name "\\\\")
   (#prefix! @displayname @name " — ")
-  (#set! role bookmark)
+  (#set! role tag-link)
 )
 
 ((enum_item

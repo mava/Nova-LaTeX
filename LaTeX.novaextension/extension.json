@@ -3,7 +3,7 @@
     "name": "LaTeX",
     "organization": "Marco Varisco",
     "description": "Adds support for LaTeX.",
-    "version": "0.9",
+    "version": "0.10",
     "categories": [
         "languages",
         "tasks",
@@ -24,7 +24,7 @@
     
     "activationEvents": [
         "onLanguage:latex",
-        "onWorkspaceContains:*.tex"
+        "onLanguage:bibtex"
     ],
     
     "commands": {

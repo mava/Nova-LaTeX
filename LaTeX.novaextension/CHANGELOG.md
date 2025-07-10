@@ -1,3 +1,7 @@
+## Version 0.10
+
+- ***Improved:*** Tweaked symbols so that section names (instead of labels) appear in the [minimap](https://help.nova.app/editor/overview/#minimap)
+
 ## Version 0.9
 
 - ***Fixed:*** New Tree-sitter syntaxes now also work with older versions of Nova
