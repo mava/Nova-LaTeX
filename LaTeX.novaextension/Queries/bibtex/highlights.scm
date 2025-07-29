@@ -25,7 +25,7 @@
 [
   (brace_word)
   (quote_word)
-] @string
+] @value
 
 [
   (key_brace)
