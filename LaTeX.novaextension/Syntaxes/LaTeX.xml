@@ -8,6 +8,8 @@
     
     <detectors>
         <extension priority="1.0">tex</extension>
+        <extension priority="0.9">ltx,sty,cls,clo,bbx,cbx,dbx,tikz</extension>
+        <match-content lines="3" priority="0.5">^\\documentclass</match-content>
     </detectors>
     
     <comments>
