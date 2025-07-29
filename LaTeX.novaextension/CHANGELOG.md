@@ -1,3 +1,9 @@
+## Version 1.0
+
+- 🎉 Good enough for 1.0 🤞
+
+---
+
 ## Version 0.11
 
 - ***Improved:*** Files with extension `.ltx`, `.sty`, `.cls`, `.clo`, `.bbx`, `.cbx`, `.dbx`, or `.tikz`, or with `\documentclass` declaration near the top, are now also recognized as LaTeX
