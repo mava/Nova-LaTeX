@@ -1,3 +1,7 @@
+## Version 1.1
+
+- ***Fixed:*** Resolved an (embarrassing) issue with automatic environment closing
+
 ## Version 1.0
 
 - 🎉 Good enough for 1.0 🤞

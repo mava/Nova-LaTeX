@@ -18,7 +18,7 @@
       (text) @name))
   ) @subtree
   (#set! role tag-script)
-  (#set! autoclose.expression "\end")
+  (#set! autoclose.expression "\\end")
   (#set! autoclose.completion "{${name}}")
 )
 
