@@ -137,6 +137,12 @@ class LatexTaskProvider {
                         "-c"
                     ];
                 } else return;
+                if (nova.config.get("novalatex.option-auxdir")) {
+                    args = [
+                        ...args,
+                        `--aux-directory=${nova.config.get("novalatex.option-auxdir")}`,
+                    ];
+                }
                 command = "/usr/bin/env";
                 args = [
                     nova.config.get("novalatex.path-latexmk"),

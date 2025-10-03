@@ -1,3 +1,7 @@
+## Version 1.2
+
+- ***New:*** Support latexmk `--aux-directory` option to put auxiliary files into custom directory.
+
 ## Version 1.1
 
 - ***Fixed:*** Resolved an (embarrassing) issue with automatic environment closing

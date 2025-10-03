@@ -3,7 +3,7 @@
     "name": "LaTeX",
     "organization": "Marco Varisco",
     "description": "Adds support for LaTeX.",
-    "version": "1.1",
+    "version": "1.2",
     "categories": [
         "languages",
         "tasks",
@@ -76,6 +76,14 @@
             "type": "path",
             "default": "latexmk",
             "description": "This needs to be configured only if latexmk is not in $PATH."
+        },
+        {
+            "key": "novalatex.option-auxdir",
+            "title": "Auxiliary Folder Name",
+            "type": "string",
+            "description": "Folder in which to put the auxiliary files (.aux, .log, .fls, …). This uses latexmk’s --aux-directory.",
+            "placeholder": "(Don’t use build folder)",
+            "default": ""
         },
         {
             "key": "novalatex.path-server",
