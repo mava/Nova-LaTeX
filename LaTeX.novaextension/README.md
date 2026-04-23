@@ -1,8 +1,9 @@
 This extension provides support for [**LaTeX**](https://en.wikipedia.org/wiki/LaTeX):
 
-- Syntax highlighting, symbolization, and folding.
-- Building and previewing PDF files, with LaTeX ⇌ PDF synchronization.
-- Smart code completion, contextual hover information, and issue reports.
+- syntax highlighting, symbolization, and folding;
+- building and previewing PDF files, with LaTeX ⇌ PDF synchronization.
+
+Smart code completion, contextual hover information, and issue reports are available thanks to the [TexLab Language Server](https://github.com/latex-lsp/texlab) and Nova’s built-in support for language servers (this requires [Nova&nbsp;14 or later](https://nova.app/releases/)).
 
 ![](https://github.com/mava/nova-latex/raw/main/test@2x.gif)
 
@@ -16,10 +17,15 @@ This extension provides support for [**LaTeX**](https://en.wikipedia.org/wiki/La
 - To preview PDF files with LaTeX ⇌ PDF synchronization, the PDF reader [**Skim**](https://skim-app.sourceforge.io) is required.
 To enable jumping back to the LaTeX source line in Nova corresponding to a point in a PDF in Skim, open Skim’s **Preferences → Sync** and then choose **Nova** from the **PDF–TeX Sync Preset** dropdown menu.
 
-- Smart code completion, contextual hover information, and issue reports require the [**TexLab Language Server**](https://github.com/latex-lsp/texlab). The easiest way to install TexLab is to first install [Homebrew](https://brew.sh) and then run `brew install texlab` in a terminal.
-If no language server is installed or the path provided in this extension’s **Preferences** tab is incorrect, then smart code completion, contextual hover information, and issue reports are just not available, but everything else works.
-Other LaTeX language servers may also be used.
+- *Optional but highly recommended (requires Nova&nbsp;14 or later):* to enable smart code completion, contextual hover information, and issue reports, install the [**TexLab Language Server**](https://github.com/latex-lsp/texlab).
+(The easiest way to install TexLab is to first install [Homebrew](https://brew.sh) and then run `brew install texlab` in a terminal.)
+Then open Nova’s **Preferences → Languages**, select **LaTeX** in the list of languages, open the dropdown menu under “No language servers are configured,” and click on **Add A Custom Language Server…**.
+In the new window, enter `TexLab` in the **Name** field and `texlab` in the **Command** field;
+if `texlab` is in `$PATH`, this should do it!
+Click **OK**.
+Repeat for **BibTeX**, but now in the dropdown menu simply select **TexLab**. 
 Make sure that the **Language Server** features are enabled in Nova’s **Preferences → Editor → Extensions** (they are enabled by default).
+Other LaTeX language servers may also be used; for example, [Digestif](https://github.com/astoff/digestif).
 
 
 ## Usage
@@ -62,13 +68,12 @@ Technically, they are implemented [as Task Assistants, and *not only* as Task Te
 This way it’s also possible to open a single `.tex` file in Nova and just build it, with no need to first choose a project for the corresponding window.
 <!-- “You have not yet chosen a project for this window.” -->
 
-The cool stuff (smart code completion, contextual hover information, issue reports) is provided by the [TexLab Language Server](https://github.com/latex-lsp/texlab).
-Nova’s implementation of the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/) is great, and TexLab’s implementation of the LSP for LaTeX is great&#8239;—&#8239;why reinvent the wheel?
-In fact, this extension uses nothing more than Nova’s Language Server Extension template (and so it can be run with other language servers; for example, [Digestif](https://github.com/astoff/digestif)).
-
 Syntax highlighting, symbolization, and folding are based on the [Tree-sitter](https://tree-sitter.github.io/tree-sitter/) parsers [tree-sitter-latex](https://github.com/latex-lsp/tree-sitter-latex) and [tree-sitter-bibtex](https://github.com/latex-lsp/tree-sitter-bibtex).
 
 LaTeX ⇌ PDF synchronization just works thanks to [Skim](https://skim-app.sourceforge.io)’s implementation of the magic of [SyncTeX](https://github.com/jlaurens/synctex).
+
+The cool stuff (smart code completion, contextual hover information, issue reports) is provided by the [TexLab Language Server](https://github.com/latex-lsp/texlab).
+Nova’s implementation of the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/) is great (and it’s even better since Nova&nbsp;14), and TexLab’s implementation of the LSP for LaTeX is great&#8239;—&#8239;why reinvent the wheel?
 
 I cobbled together this extension around my (perhaps idiosyncratic) LaTeX workflow, and I’ve been happily doing all my TeXing in Nova ever since.
 Hopefully, other LaTeX users may find this extension useful, too!

@@ -3,18 +3,16 @@
     "name": "LaTeX",
     "organization": "Marco Varisco",
     "description": "Adds support for LaTeX.",
-    "version": "1.1",
+    "version": "2.0",
     "categories": [
         "languages",
-        "tasks",
-        "issues",
-        "completions"
+        "tasks"
     ],
     "repository": "https://github.com/mava/nova-latex",
     "bugs": "https://github.com/mava/nova-latex/issues",
     "license": "MIT",
     
-    "min_runtime": "10",
+    "min_runtime": "14",
     
     "main": "main.js",
     
@@ -76,13 +74,6 @@
             "type": "path",
             "default": "latexmk",
             "description": "This needs to be configured only if latexmk is not in $PATH."
-        },
-        {
-            "key": "novalatex.path-server",
-            "title": "Language Server Path",
-            "type": "path",
-            "default": "texlab",
-            "description": "This needs to be configured only if texlab is not in $PATH, or to use a different language server."
         }
     ],
     
