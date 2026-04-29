@@ -3,7 +3,7 @@ This extension provides support for [**LaTeX**](https://en.wikipedia.org/wiki/La
 - syntax highlighting, symbolization, and folding;
 - building and previewing PDF files, with LaTeX ⇌ PDF synchronization.
 
-Smart code completion, contextual hover information, and issue reports are available thanks to the [TexLab Language Server](https://github.com/latex-lsp/texlab) and Nova’s built-in support for language servers (this requires [Nova&nbsp;14 or later](https://nova.app/releases/)).
+> Smart code completion, contextual hover information, and issue reports are available thanks to the [**TexLab Language Server**](https://github.com/latex-lsp/texlab) and Nova’s built-in support for language servers. This requires [Nova&nbsp;14 or later](https://nova.app/releases/)&#8239;—&#8239;see last bullet point under *Requirements* below.
 
 ![](https://github.com/mava/nova-latex/raw/main/test@2x.gif)
 
@@ -17,7 +17,7 @@ Smart code completion, contextual hover information, and issue reports are avail
 - To preview PDF files with LaTeX ⇌ PDF synchronization, the PDF reader [**Skim**](https://skim-app.sourceforge.io) is required.
 To enable jumping back to the LaTeX source line in Nova corresponding to a point in a PDF in Skim, open Skim’s **Preferences → Sync** and then choose **Nova** from the **PDF–TeX Sync Preset** dropdown menu.
 
-- *Optional but highly recommended (requires Nova&nbsp;14 or later):* to enable smart code completion, contextual hover information, and issue reports, install the [**TexLab Language Server**](https://github.com/latex-lsp/texlab).
+- *Optional but highly recommended (requires Nova&nbsp;14 or later):* to enable smart code completion, contextual hover information, and issue reports, the [**TexLab Language Server**](https://github.com/latex-lsp/texlab) is required.
 (The easiest way to install TexLab is to first install [Homebrew](https://brew.sh) and then run `brew install texlab` in a terminal.)
 Then open Nova’s **Preferences → Languages**, select **LaTeX** in the list of languages, open the dropdown menu under “No language servers are configured,” and click on **Add A Custom Language Server…**.
 In the new window, enter `TexLab` in the **Name** field and `texlab` in the **Command** field;
@@ -35,14 +35,14 @@ There is also a **Clean** (⇧⌘K) task to remove TeX auxiliary files.
 
 These tasks become automatically available in any project containing `.tex` files.
 The default engine (pdfLaTeX or XeLaTex or LuaLaTeX) used to **Build** (⌘B) PDF files can be chosen in this extension’s **Preferences** tab, and it can also be configured on a per-project basis in **Project → Project Settings**.
-By default the tasks use whichever file is active, but there is also an option to choose a main (root) `.tex` file in the **Project Settings**.
+By default, the tasks use whichever file is active, but there is also an option to choose a main (root) `.tex` file in the **Project Settings**.
 Custom LaTeX tasks can also be added&#8239;—&#8239;and used, for example, in **Task Pipelines**.
 
 The **Run** (⌘R) task opens in Skim the PDF corresponding to the LaTeX source in Nova’s active editor, and highlights the line under the cursor’s position in Nova.
 By default, Skim is kept in the background, but this can be changed in this extension’s **Preferences** tab.
 
 To jump back to the LaTeX source line corresponding to a point in a PDF file, just ⇧⌘-*click* on a point in the PDF in Skim.
-Make sure that **Nova** is selected in Skim’s **PDF–TeX Sync** preferences, as explained above in the third bullet point under Requirements.
+Make sure that **Nova** is selected in Skim’s **PDF–TeX Sync** preferences, as explained above in the third bullet point under *Requirements*.
 
 The log files produced during the **Build** (⌘B) task are available in Nova’s **Reports Sidebar**.
 Compilation errors and warnings are displayed in the **Issues Sidebar** and in the editor gutter (this requires the TexLab Language Server).
