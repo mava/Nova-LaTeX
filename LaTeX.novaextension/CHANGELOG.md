@@ -1,8 +1,12 @@
+> *Requires Nova&#8239;≥&#8239;14&#8239;—&#8239;see the extension’s help (in particular, the last bullet point under *Requirements*) for details. For older versions of Nova, please install [version&nbsp;1.1](https://github.com/mava/Nova-LaTeX/releases/tag/v1.1) from the extension’s repository.*
+
+## Version 2.1
+
+- ***Improved:*** Run task now fails gracefully if there is no PDF file
+
 ## Version 2.0
 
-> *Requires Nova&#8239;≥&#8239;14. For older versions of Nova, please install [version&nbsp;1.1](https://github.com/mava/Nova-LaTeX/releases/tag/v1.1) from the extension’s repository.*
-
-- ***New:*** Nova&nbsp;14 adds built-in support for language servers, so parts of this extension became redundant and were removed&#8239;—&#8239;see the extension’s help (in particular, the last bullet point under *Requirements*) for details
+- ***New:*** Nova&nbsp;14 adds built-in support for language servers, so parts of this extension became redundant and were removed
 
 ## Version 1.1
 

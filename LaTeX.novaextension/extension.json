@@ -3,7 +3,7 @@
     "name": "LaTeX",
     "organization": "Marco Varisco",
     "description": "Adds support for LaTeX.",
-    "version": "2.0",
+    "version": "2.1",
     "categories": [
         "languages",
         "tasks"
@@ -17,7 +17,8 @@
     "main": "main.js",
     
     "entitlements": {
-        "process": true
+        "process": true,
+        "filesystem": "readonly"
     },
     
     "activationEvents": [

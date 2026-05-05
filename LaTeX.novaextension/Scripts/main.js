@@ -46,18 +46,23 @@ class LatexTaskProvider {
         let args;
         if (mainfile) {
             if (context.action === Task.Run) {
-                command = nova.path.join(nova.config.get("novalatex.path-skim"), "Contents/SharedSupport/displayline");
-                args = [
-                    (activefile ? getLnCol(editor)[0] : 0).toString(),
-                    nova.path.join(nova.path.dirname(mainfile), nova.path.splitext(mainfile)[0]) + ".pdf"
-                ];
-                if (activefile) {
-                    args.push(activefile);
-                }
-                for (const option of ["-readingbar", "-background"]) {
-                    if (nova.config.get("novalatex.option-skim" + option, "boolean")) {
-                        args.unshift(option);
+                const pdffile = nova.path.join(nova.path.dirname(mainfile), nova.path.splitext(mainfile)[0]) + ".pdf";
+                if (nova.fs.stat(pdffile)?.isFile()) {
+                    command = nova.path.join(nova.config.get("novalatex.path-skim"), "Contents/SharedSupport/displayline");
+                    args = [
+                        (activefile ? getLnCol(editor)[0] : 0).toString(),
+                        pdffile
+                    ];
+                    if (activefile) {
+                        args.push(activefile);
                     }
+                    for (const option of ["-readingbar", "-background"]) {
+                        if (nova.config.get("novalatex.option-skim" + option, "boolean")) {
+                            args.unshift(option);
+                        }
+                    }
+                } else {
+                    args = ["No PDF file " + pdffile];
                 }
             } else {
                 if (context.action === Task.Build) {
