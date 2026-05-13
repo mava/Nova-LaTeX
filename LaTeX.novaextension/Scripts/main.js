@@ -41,7 +41,11 @@ class LatexTaskProvider {
         );
         const editor = nova.workspace.activeTextEditor;
         const activefile = editor?.document?.path;
-        const mainfile = getLocalConfig("novalatex.mainfile") || activefile;
+        let configfile = getLocalConfig("novalatex.mainfile");
+        if (configfile && !nova.path.isAbsolute(configfile)) {
+            configfile = nova.path.join(nova.workspace.path, configfile);
+        }
+        const mainfile = configfile || activefile;
         let command;
         let args;
         if (mainfile) {
