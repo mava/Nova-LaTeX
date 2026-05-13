@@ -1,5 +1,9 @@
 > *Requires Nova&#8239;≥&#8239;14&#8239;—&#8239;see the extension’s help (in particular, the last bullet point under *Requirements*) for details. For older versions of Nova, please install [version&nbsp;1.1](https://github.com/mava/Nova-LaTeX/releases/tag/v1.1) from the extension’s repository.*
 
+## Version 2.3
+
+- ***Fixed:*** Resolved an issue with submission to Extension Library
+
 ## Version 2.2
 
 - ***Fixed:*** Resolved an issue with relative file paths for the main `.tex` file in **Project Settings**
